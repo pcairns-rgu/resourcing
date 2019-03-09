@@ -5,13 +5,12 @@
     <title>Forecast Home</title>
     <link rel="stylesheet" href="assets/css/homepage.css">
     <link rel="stylesheet" href="assets/css/style.css">
-
 </head>
 
 <!--- Main body --->
 <body>
   <header>
-
+ <p id="login">Log-in</p>
 
   </header>
 <main>
