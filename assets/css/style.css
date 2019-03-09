@@ -2,8 +2,13 @@
     display:inline-block;
 }
 
-.bottom p{
+
+.bottom {
     display:inline-block;
 }
 
-
+.bottom li{
+    display:inline-block;
+    float: right;
+    padding: 15px;
+}

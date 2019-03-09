@@ -18,6 +18,7 @@
     <h3>COMBINING TASK MANAGEMENT WITH RESOURCING</h3>
 
 </main>
+  <!---Start of footer -->
 <hr />
 <footer>
     <div class="connect">
@@ -31,11 +32,14 @@
     </div>
 
     <div class="bottom">
-   <p>&copy; 2019 Pauline Cairns</p>
-        <a href="contact.html"><p>Contact</p></a>
-        <a href="about.html"><p>About</p></a>
-        <a href="t&c.html"> <p>T&Cs</p></a>
-        <a href="cookies.html"><p>Cookies</p></a>
+      <p>&copy; 2019 Pauline Cairns</p>
+        <nav>
+            <ul>
+              <li><a href="contact.html">Contact</a></li>
+              <li><a href="about.html">About</a></li>
+              <li><a href="t&c.html">T&Cs</a></li>
+              <li><a href="cookies.html">Cookies</a></li>
+            </ul>
     </div>
 </footer>
 
