@@ -32,11 +32,10 @@
 
     <div class="bottom">
    <p>&copy; 2019 Pauline Cairns</p>
-        <p>Contact details</p>
-        <p>T&Cs</p>
-        <p>About</p>
-        <p>Cookies</p>
-
+        <a href="contact.html"><p>Contact</p></a>
+        <a href="about.html"><p>About</p></a>
+        <a href="t&c.html"> <p>T&Cs</p></a>
+        <a href="cookies.html"><p>Cookies</p></a>
     </div>
 </footer>
 
