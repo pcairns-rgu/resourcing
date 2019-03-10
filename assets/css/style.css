@@ -1,12 +1,18 @@
-.connect p{
+.connect{
     display:inline-block;
 }
 
-
-.bottom {
-    display:inline-block;
-}
 
 .bottom nav{
     display:inline-block;
 }
+
+nav>ul>li{
+    list-style-type: none;
+}
+
+a.youtube {
+    background-image: url("/assets/images/youtube_social_squircle_red.png");
+    background-repeat: no-repeat;
+}
+
