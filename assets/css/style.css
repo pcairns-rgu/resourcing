@@ -7,9 +7,6 @@
     display:inline-block;
 }
 
-.bottom li{
+.bottom nav{
     display:inline-block;
-    float: right;
-    padding: 15px;
 }
-

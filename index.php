@@ -9,7 +9,7 @@
           href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <title>Forecast Home</title>
     <link rel="stylesheet" href="assets/css/homepage.css">
-    <link rel="stylesheet" href="assets/css/style.css">
+
 </head>
 
 <!--- Main body --->
@@ -46,6 +46,7 @@
               <li><a href="t&c.html">T&Cs</a></li>
               <li><a href="cookies.html">Cookies</a></li>
             </ul>
+        </nav>
     </div>
 </footer>
 </div>
