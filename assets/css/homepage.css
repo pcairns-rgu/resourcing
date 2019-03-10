@@ -12,6 +12,7 @@ border: lightblue solid 2px;
 h1{
     color: darkgoldenrod;
     text-align: center;
+    letter-spacing: 0.1em;
 }
 
 h3{
