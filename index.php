@@ -20,7 +20,7 @@
 <body>
 <div class="container">
   <header>
- <p id="login">Log-in</p>
+      <p id="login"><a href="register.php">Log-in</a></p>
 
   </header>
 <main>
