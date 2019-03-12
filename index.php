@@ -21,7 +21,7 @@
 <div class="container">
   <header>
       <p id="login"><a href="login_form.php">Log-in</a></p>
-
+      <p id="login"><a href="register_form.php">Register</a></p>
   </header>
 <main>
     <h1>FORECAST</h1>
