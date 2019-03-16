@@ -29,7 +29,87 @@
 
     </header>
     <main>
-        <p>Things to do </p>
+        <p>Actions required</p>
+
+
+        <h3>Module</h3>
+        <table class="module">
+
+    <tr>
+            <th>Date</th>
+            <th>Course</th>
+            <th>Action</th>
+            <th>Notes(status)</th>
+            <th>Deadline</th>
+            <th>Completed</th>
+            <th>Delete</th>
+            <th>Reallocate</th>
+    </tr>
+            <tr>
+            <td>Today</td>
+            <td>CMM004</td>
+            <td>Set up page</td>
+            <td>Started</td>
+                <td>Now</td>
+            <td>No</td>
+            <td>Delete</td>
+            <td>Reallocate</td>
+
+            </tr>
+
+        </table>
+<br><br>
+        <h3>Department</h3>
+        <table class="department">
+
+            <tr>
+                <th>Date</th>
+                <th>Action</th>
+                <th>Notes(status)</th>
+                <th>Deadline</th>
+                <th>Completed</th>
+                <th>Delete</th>
+                <th>Reallocate</th>
+            </tr>
+            <tr>
+                <td>Today</td>
+                <td>Set up page</td>
+                <td>Started</td>
+                <td>Now</td>
+                <td>No</td>
+                <td>Delete</td>
+                <td>Reallocate</td>
+
+            </tr>
+
+        </table>
+
+        <br><br>
+        <h3>Private</h3>
+        <table class="private">
+
+            <tr>
+                <th>Date</th>
+                <th>Action</th>
+                <th>Notes(status)</th>
+                <th>Deadline</th>
+                <th>Completed</th>
+                <th>Delete</th>
+
+            </tr>
+            <tr>
+                <td>Today</td>
+                <td>Set up page</td>
+                <td>Started</td>
+                <td>Now</td>
+                <td>No</td>
+                <td>Delete</td>
+
+
+            </tr>
+
+        </table>
+
 
 
     </main>
