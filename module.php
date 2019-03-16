@@ -18,6 +18,7 @@
           href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <title>Module Action List</title>
     <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/table.css">
 
 </head>
 <!--- Main body --->
@@ -26,12 +27,39 @@
     <header>
         <a href="index.php"><h2 class="logo">FORECAST</h2></a>
         <h1>Module Action List</h1>
+        <p id=""><a href="">Module list</a></p>
+        <p id=""><a href="">Nav to another page</a></p>
 
     </header>
     <main>
         <p>Things to do </p>
 
+        <table class="module">
 
+            <tr>
+                <th>Date</th>
+                <th>Course</th>
+                <th>Action</th>
+                <th>Notes(status)</th>
+                <th>Deadline</th>
+                <th>Completed</th>
+                <th>Delete</th>
+                <th>Reallocate</th>
+            </tr>
+            <tr>
+                <td>Today</td>
+                <td>CMM004</td>
+                <td>Set up page</td>
+                <td>Started</td>
+                <td>Now</td>
+                <td>No</td>
+                <td>Delete</td>
+                <td>Reallocate</td>
+
+            </tr>
+
+        </table>
+        <br><br>
     </main>
     <hr />
     <footer>

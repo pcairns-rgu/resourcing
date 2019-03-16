@@ -18,6 +18,7 @@
           href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <title>My Action List</title>
     <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/table.css">
 
 </head>
 <!--- Main body --->
@@ -26,7 +27,8 @@
     <header>
         <a href="index.php"><h2 class="logo">FORECAST</h2></a>
         <h1>My Action List</h1>
-
+        <p id=""><a href="">Module list</a></p>
+        <p id=""><a href="">Nav to another page</a></p>
     </header>
     <main>
         <p>Actions required</p>
