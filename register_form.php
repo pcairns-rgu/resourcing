@@ -22,13 +22,13 @@
       <br><br>
       <form method="post" action="register.php">
           <label>Firstname: </label><br>
-          <input type="text" name="firstname" placeholder="firstname" autofocus required/><br><br>
+          <input type="text" name="firstname" placeholder="firstname"  autofocus required/><br><br>
           <label>Lastname: </label><br>
-          <input type="text" name="lastname" placeholder="lastname" required/><br><br>
+          <input type="text" name="lastname" placeholder="lastname"  required/><br><br>
           <label>Username: </label><br>
           <input type="text" name="username" placeholder="username" required/><br><br>
           <label>Password: (8 to 15 characters in length)</label><br>
-          <input type="password" name="user_password" placeholder="password" minlength="8" maxlength="15" required/><br><br>
+          <input type="password" name="pwd" placeholder="password"  minlength="8" maxlength="15" required/><br><br>
 
           <input type="submit" value="Submit"/>
           <input type="reset">

@@ -2,7 +2,7 @@
 
 include("config.php");
 
-if(empty($_POST["firstname"]) || empty($_POST["lastname"])|| empty($_POST["username"])|| empty($_POST["user_password"]))
+if(empty($_POST["firstname"]) || empty($_POST["lastname"])|| empty($_POST["username"])|| empty($_POST["pwd"]))
 {
     echo "All fields are required";
 }
@@ -10,10 +10,16 @@ else{
     $firstname=$_POST["firstname"];
     $lastname=$_POST["lastname"];
     $username=$_POST["username"];
-    $user_password=$_POST["user_password"];
+    $pwd=$_POST["pwd"];
 
 }
 
+$sql = "INSERT INTO user (firstname, lastname, username, pwd)
+VALUES ('firstname', 'lastname', 'username', 'pwd')";
+
+
+
+/*
 $sql="SELECT id FROM user WHERE username='$username'";
 $result = mysqli_query($db, $sql);
 
@@ -24,8 +30,14 @@ if(mysqli_num_rows($result)== 1)
 
 
 }
+else{
+
+    header("location:home.php");
+}
 
 
+
+$conn->close();
 ?>
 
 <?php

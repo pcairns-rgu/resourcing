@@ -7,18 +7,18 @@
  */
 include("config.php");
 
-if(empty($_POST["username"])|| empty($_POST["user_password"]))
+if(empty($_POST["username"])|| empty($_POST["pwd"]))
 {
     echo "All fields are required";
 }
 else{
 
     $username=$_POST["username"];
-    $user_password=$_POST["user_password"];
+    $pwd=$_POST["pwd"];
 
 }
 
-$sql="SELECT id FROM user WHERE username='$username' AND user_password='$user_password'";
+$sql="SELECT id FROM user WHERE username='$username' AND pwd='$pwd'";
 $result = mysqli_query($db, $sql);
 
 if(mysqli_num_rows($result)== 1)
