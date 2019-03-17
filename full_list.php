@@ -51,7 +51,7 @@ include("config.php");
         <table class='module'>
 
             <tr>
-                <th>Date</th>
+                <th>Date added</th>
                 <th>Course</th>
                 <th>Action</th>
                 <th>Notes(status)</th>
@@ -65,13 +65,14 @@ include("config.php");
         $sql_query="SELECT * FROM module";
         $result = $db->query($sql_query);
         while($row = $result->fetch_array()) {
+            $today = $row['today'];
             $module = $row['module'];
             $task = $row['task'];
             $comments = $row['comments'];
             $deadline = $row['deadline'];
             echo "
             <tr>
-            <td>Today</td>
+            <td>{$today}</td>
             <td>{$module}</td>
             <td>{$task}</td>
                 <td>{$comments}</td>
@@ -93,7 +94,7 @@ include("config.php");
         <table class='department'>
 
             <tr>
-                <th>Date</th>
+                <th>Date added</th>
                 <th>Action</th>
                 <th>Notes(status)</th>
                 <th>Deadline</th>
@@ -104,15 +105,17 @@ include("config.php");
             </tr>
         <?php
 $sql_query="SELECT * FROM department";
+
 $result = $db->query($sql_query);
 while($row = $result->fetch_array()) {
+    $today = $row['today'];
     $task = $row['task'];
     $comments = $row['comments'];
     $deadline = $row['deadline'];
     echo "
        
             <tr>
-               <td>Date</td>
+               <td>{$today}</td>
                 <td>{$task}</td>
                 <td>{$comments}</td>
                 <td>{$deadline}</td>
@@ -132,7 +135,7 @@ while($row = $result->fetch_array()) {
         <table class='private'>
 
             <tr>
-                <th>Date</th>
+                <th>Date added</th>
                 <th>Action</th>
                 <th>Notes(status)</th>
                 <th>Deadline</th>
@@ -146,12 +149,13 @@ while($row = $result->fetch_array()) {
       $sql_query="SELECT * FROM private";
         $result = $db->query($sql_query);
         while($row = $result->fetch_array()) {
+            $today = $row['today'];
             $task = $row['task'];
             $comments = $row['comments'];
             $deadline = $row['deadline'];
             echo "
             <tr>
-                <td>Date</td>
+                <td>{$today}</td>
                 <td>{$task}</td>
                 <td>{$comments}</td>
                 <td>{$deadline}</td>

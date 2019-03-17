@@ -12,7 +12,7 @@ $task = $_POST["task"];
 $comments=$_POST["comments"];
 $deadline=$_POST["deadline"];
 
-$sql = "INSERT INTO module (module, task, comments, deadline) VALUES ('$module','$task','$comments','$deadline')";
+$sql = "INSERT INTO module (today, module, task, comments, deadline) VALUES (curdate(),'$module','$task','$comments','$deadline')";
 
 if(mysqli_query($db, $sql)){
 

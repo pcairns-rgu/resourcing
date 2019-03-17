@@ -11,7 +11,7 @@ $task = $_POST["task"];
 $comments=$_POST["comments"];
 $deadline=$_POST["deadline"];
 
-$sql = "INSERT INTO private (task, comments, deadline) VALUES ('$task','$comments','$deadline')";
+$sql = "INSERT INTO private (today, task, comments, deadline) VALUES (curdate(),'$task','$comments','$deadline')";
 
 if(mysqli_query($db, $sql)){
 
