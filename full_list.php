@@ -5,6 +5,7 @@
 * Date: 16/03/2019
 * Time: 09:28
 */
+include("config.php");
 ?>
 
 <!DOCTYPE html>
@@ -47,35 +48,47 @@
 
         <h3>Module</h3>
         <p><a href="module_form.html">Add task</a></p>
-        <table class="module">
+        <table class='module'>
 
-    <tr>
-            <th>Date</th>
-            <th>Course</th>
-            <th>Action</th>
-            <th>Notes(status)</th>
-            <th>Deadline</th>
-            <th>Completed</th>
-            <th>Delete</th>
-            <th>Reallocate</th>
-    </tr>
+            <tr>
+                <th>Date</th>
+                <th>Course</th>
+                <th>Action</th>
+                <th>Notes(status)</th>
+                <th>Deadline</th>
+                <th>Completed</th>
+                <th>Delete</th>
+                <th>Reallocate</th>
+            </tr>
+        <?php
+        $sql_query="SELECT * FROM module";
+        $result = $db->query($sql_query);
+        while($row = $result->fetch_array()) {
+            $module = $row['module'];
+            $task = $row['task'];
+            $comments = $row['comments'];
+            $deadline = $row['deadline'];
+            echo "
             <tr>
             <td>Today</td>
-            <td>CMM004</td>
-            <td>Set up page</td>
-            <td>Started</td>
-                <td>Now</td>
+            <td>{$module}</td>
+            <td>{$task}</td>
+                <td>{$comments}</td>
+                <td>{$deadline}</td>
             <td>No</td>
             <td>Delete</td>
             <td>Reallocate</td>
 
             </tr>
 
+       ";
+        }
+        ?>
         </table>
 <br><br>
         <h3>Department</h3>
         <p><a href="department_form.html">Add task</a></p>
-        <table class="department">
+        <table class='department'>
 
             <tr>
                 <th>Date</th>
@@ -86,31 +99,33 @@
                 <th>Delete</th>
                 <th>Reallocate</th>
             </tr>
+        <?php
+$sql_query="SELECT * FROM department";
+$result = $db->query($sql_query);
+while($row = $result->fetch_array()) {
+    $task = $row['task'];
+    $comments = $row['comments'];
+    $deadline = $row['deadline'];
+    echo "
+       
             <tr>
-                <td>Today</td>
-                <td>Set up page</td>
-                <td>Started</td>
-                <td>Now</td>
+               <td>Date</td>
+                <td>{$task}</td>
+                <td>{$comments}</td>
+                <td>{$deadline}</td>
                 <td>No</td>
                 <td>Delete</td>
                 <td>Reallocate</td>
-
             </tr>
 
+       ";
+    }
+    ?>
         </table>
-
         <br><br>
         <h3>Private</h3>
         <p><a href="private_form.html">Add task</a></p>
-       <?php
-       include("config.php");
-      $sql_query="SELECT * FROM private";
-        $result = $db->query($sql_query);
-        while($row = $result->fetch_array()) {
-            $task = $row['task'];
-            $comments = $row['comments'];
-            $deadline = $row['deadline'];
-            echo "<table class='private'>
+        <table class='private'>
 
             <tr>
                 <th>Date</th>
@@ -121,6 +136,15 @@
                 <th>Delete</th>
 
             </tr>
+       <?php
+
+      $sql_query="SELECT * FROM private";
+        $result = $db->query($sql_query);
+        while($row = $result->fetch_array()) {
+            $task = $row['task'];
+            $comments = $row['comments'];
+            $deadline = $row['deadline'];
+            echo "
             <tr>
                 <td>Date</td>
                 <td>{$task}</td>
@@ -132,9 +156,11 @@
 
             </tr>
 
-        </table>";
+    ";
         }
 ?>
+        </table>
+
 
     </main>
     <hr />
