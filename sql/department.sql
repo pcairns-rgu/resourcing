@@ -1,3 +1,5 @@
+DROP TABLE department;
+
 CREATE TABLE department(
         id int(7) NOT NULL AUTO_INCREMENT,
         today DATE,
