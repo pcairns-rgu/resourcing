@@ -3,7 +3,7 @@ DROP TABLE private;
 CREATE TABLE private(
                       id int(7) NOT NULL AUTO_INCREMENT,
                       today DATE,
-                      task varchar(250),
+                      task varchar(250) NOT NULL,
                       comments varchar(250),
                       deadline date,
                       completed bit,
