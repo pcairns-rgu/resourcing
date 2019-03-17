@@ -59,6 +59,7 @@ include("config.php");
                 <th>Completed</th>
                 <th>Delete</th>
                 <th>Reallocate</th>
+                <th>Update</th>
             </tr>
         <?php
         $sql_query="SELECT * FROM module";
@@ -77,7 +78,8 @@ include("config.php");
                 <td>{$deadline}</td>
             <td>No</td>
             <td>Delete</td>
-            <td>Reallocate</td>
+            <td>Reallocate
+            <td>Update</td>
 
             </tr>
 
@@ -98,6 +100,7 @@ include("config.php");
                 <th>Completed</th>
                 <th>Delete</th>
                 <th>Reallocate</th>
+                <th>Update</th>
             </tr>
         <?php
 $sql_query="SELECT * FROM department";
@@ -116,6 +119,7 @@ while($row = $result->fetch_array()) {
                 <td>No</td>
                 <td>Delete</td>
                 <td>Reallocate</td>
+                <td>Update</td>
             </tr>
 
        ";
@@ -134,6 +138,7 @@ while($row = $result->fetch_array()) {
                 <th>Deadline</th>
                 <th>Completed</th>
                 <th>Delete</th>
+                <th>Update</th>
 
             </tr>
        <?php
@@ -152,6 +157,7 @@ while($row = $result->fetch_array()) {
                 <td>{$deadline}</td>
                 <td>No</td>
                 <td>Delete</td>
+                <td>Update</td>
 
 
             </tr>
