@@ -20,4 +20,5 @@ if(mysqli_query($db, $sql)){
 }
 
 header("location: full_list.php")
+
 ?>
