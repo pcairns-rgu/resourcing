@@ -31,11 +31,10 @@
         <p id=""><a href="">Nav to another page</a></p>
     </header>
     <main>
-        <p>Add task </p>
 
         <div class="dropdown">
             <button class="dropbtn">Add task
-               <i class="fa fa-caret-down">
+
             </button>
             <div >
                 <a href="module_form.html">Module</a>
@@ -103,7 +102,15 @@
         <br><br>
         <h3>Private</h3>
         <p><a href="private_form.html">Add task</a></p>
-        <table class="private">
+       <?php
+       include("config.php");
+      $sql_query="SELECT * FROM private";
+        $result = $db->query($sql_query);
+        while($row = $result->fetch_array()) {
+            $task = $row['task'];
+            $comments = $row['comments'];
+            $deadline = $row['deadline'];
+            echo "<table class='private'>
 
             <tr>
                 <th>Date</th>
@@ -115,19 +122,19 @@
 
             </tr>
             <tr>
-                <td>Today</td>
-                <td>Set up page</td>
-                <td>Started</td>
-                <td>Now</td>
+                <td>Date</td>
+                <td>{$task}</td>
+                <td>{$comments}</td>
+                <td>{$deadline}</td>
                 <td>No</td>
                 <td>Delete</td>
 
 
             </tr>
 
-        </table>
-
-
+        </table>";
+        }
+?>
 
     </main>
     <hr />
