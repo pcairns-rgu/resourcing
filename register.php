@@ -15,10 +15,13 @@ else{
 }
 
 $sql = "INSERT INTO user (firstname, lastname, username, pwd)
-VALUES ('firstname', 'lastname', 'username', 'pwd')";
+VALUES ('$firstname', '$lastname', '$username', '$pwd')";
 
+if(mysqli_query($db, $sql)){
 
-
+}else {echo "Error: ". $sql . "<br". mysqli_error($db);
+}
+header("location:home.php");
 /*
 $sql="SELECT id FROM user WHERE username='$username'";
 $result = mysqli_query($db, $sql);
@@ -32,7 +35,7 @@ if(mysqli_num_rows($result)== 1)
 }
 else{
 
-    header("location:home.php");
+
 }
 
 

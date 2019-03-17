@@ -18,6 +18,10 @@
 <body>
  <h1>Hello</h1>
 
+<p><a href="full_list.php">My action list</a></p>
+<p><a href="module.php">Module list</a></p>
+<p><a href="overview_list.php">Overview</a></p>
+
 </body>
 </html>
 <?php

@@ -31,10 +31,23 @@
         <p id=""><a href="">Nav to another page</a></p>
     </header>
     <main>
-        <p>Actions required</p>
+        <p>Add task </p>
 
+        <div class="dropdown">
+            <button class="dropbtn">Add task
+               <i class="fa fa-caret-down">
+            </button>
+            <div >
+                <a href="module_form.html">Module</a>
+                <a href="department_form.html">Department</a>
+                <a href="private_form.html">Private</a>
+            </div>
+        </div>
+
+        <br>
 
         <h3>Module</h3>
+        <p><a href="module_form.html">Add task</a></p>
         <table class="module">
 
     <tr>
@@ -62,6 +75,7 @@
         </table>
 <br><br>
         <h3>Department</h3>
+        <p><a href="department_form.html">Add task</a></p>
         <table class="department">
 
             <tr>
@@ -88,6 +102,7 @@
 
         <br><br>
         <h3>Private</h3>
+        <p><a href="private_form.html">Add task</a></p>
         <table class="private">
 
             <tr>
