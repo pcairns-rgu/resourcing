@@ -1,3 +1,5 @@
+DROP TABLE module;
+
 CREATE TABLE module(
                            id int(7) NOT NULL AUTO_INCREMENT,
                            today DATE,
