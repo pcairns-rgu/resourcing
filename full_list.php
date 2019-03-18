@@ -120,7 +120,7 @@ while($row = $result->fetch_array()) {
                 <td>{$comments}</td>
                 <td>{$deadline}</td>
                 <td>No</td>
-                <td>Delete</td>
+                <td><a href='delete_department_task.php'>Delete<a></a></td>
                 <td>Reallocate</td>
                 <td><a href='department_updateform.php'>Update</a></td>
             </tr>
