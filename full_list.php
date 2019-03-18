@@ -161,7 +161,7 @@ while($row = $result->fetch_array()) {
                 <td>{$deadline}</td>
                 <td>No</td>
                 <td><a href='delete/delete_private_task.php'>Delete</a></td>
-                <td>Update</td>
+                <td><a href='update/private_updateform.php'>Update</a></td>
 
 
             </tr>
