@@ -122,7 +122,7 @@ while($row = $result->fetch_array()) {
                 <td>No</td>
                 <td>Delete</td>
                 <td>Reallocate</td>
-                <td>Update</td>
+                <td><a href='department_updateform.php'>Update</a></td>
             </tr>
 
        ";
