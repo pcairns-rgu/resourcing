@@ -79,8 +79,8 @@ include("config.php");
                 <td>{$deadline}</td>
             <td>No</td>
             <td><a href='delete/delete_module_task.php'>Delete</a></td>
-            <td>Reallocate
-            <td>Update</td>
+            <td>Reallocate</td>
+            <td><a href='update/module_updateform.php'>Update</a></td>
 
             </tr>
 
