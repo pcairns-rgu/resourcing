@@ -38,16 +38,16 @@ include("config.php");
 
             </button>
             <div >
-                <a href="module_form.html">Module</a>
-                <a href="department_form.html">Department</a>
-                <a href="private_form.html">Private</a>
+                <a href="create/module_form.html">Module</a>
+                <a href="create/department_form.html">Department</a>
+                <a href="create/private_form.html">Private</a>
             </div>
         </div>
 
         <br>
 
         <h3>Module</h3>
-        <p><a href="module_form.html">Add task</a></p>
+        <p><a href="create/module_form.html">Add task</a></p>
         <table class='module'>
 
             <tr>
@@ -78,7 +78,7 @@ include("config.php");
                 <td>{$comments}</td>
                 <td>{$deadline}</td>
             <td>No</td>
-            <td>Delete</td>
+            <td><a href='delete/delete_module_task.php'>Delete</a></td>
             <td>Reallocate
             <td>Update</td>
 
@@ -90,7 +90,7 @@ include("config.php");
         </table>
 <br><br>
         <h3>Department</h3>
-        <p><a href="department_form.html">Add task</a></p>
+        <p><a href="create/department_form.html">Add task</a></p>
         <table class='department'>
 
             <tr>
@@ -120,9 +120,9 @@ while($row = $result->fetch_array()) {
                 <td>{$comments}</td>
                 <td>{$deadline}</td>
                 <td>No</td>
-                <td><a href='delete_department_task.php'>Delete<a></a></td>
+                <td><a href='delete/delete_department_task.php'>Delete<a></a></td>
                 <td>Reallocate</td>
-                <td><a href='department_updateform.php'>Update</a></td>
+                <td><a href='update/department_updateform.php'>Update</a></td>
             </tr>
 
        ";
@@ -131,7 +131,7 @@ while($row = $result->fetch_array()) {
         </table>
         <br><br>
         <h3>Private</h3>
-        <p><a href="private_form.html">Add task</a></p>
+        <p><a href="create/private_form.html">Add task</a></p>
         <table class='private'>
 
             <tr>
@@ -160,7 +160,7 @@ while($row = $result->fetch_array()) {
                 <td>{$comments}</td>
                 <td>{$deadline}</td>
                 <td>No</td>
-                <td>Delete</td>
+                <td><a href='delete/delete_private_task.php'>Delete</a></td>
                 <td>Update</td>
 
 

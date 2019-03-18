@@ -18,9 +18,9 @@
 
     <link rel="stylesheet"
           href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/css/colours.css">
-    <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="assets/css/form.css">
+    <link rel="stylesheet" href="../assets/css/colours.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/form.css">
 
 </head>
 <body>
@@ -30,7 +30,7 @@
 <br><br>
 
 <?php
-include("config.php");
+include("../config.php");
 $sql_query="SELECT * FROM department WHERE id=1";
 
 $result = $db->query($sql_query);

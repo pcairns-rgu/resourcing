@@ -17,8 +17,10 @@
 </head>
 
 <!--- Main body --->
-<body>
+<body >
 <div class="container">
+
+
   <header>
       <p id="login"><a href="login_form.php">Log-in</a></p>
       <p id="login"><a href="register_form.php">Register</a></p>
@@ -26,6 +28,7 @@
 <main>
     <h1>FORECAST</h1>
     <h3>COMBINING TASK MANAGEMENT WITH RESOURCING</h3>
+    <img src="assets/images/seesaw.jpg" alt="seesaw image"/>
 
 </main>
   <!---Start of footer -->
@@ -52,6 +55,7 @@
         </nav>
     </div>
 </footer>
+
 </div>
 <!-- Go to www.addthis.com/dashboard to customize your tools -->
 <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5c853fcb8b82e462"></script>
