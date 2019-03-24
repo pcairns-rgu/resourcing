@@ -5,6 +5,7 @@
 * Date: 16/03/2019
 * Time: 09:28
 */
+session_start();
 include("config.php");
 ?>
 
@@ -28,8 +29,9 @@ include("config.php");
     <header>
         <a href="index.php"><h2 class="logo">FORECAST</h2></a>
         <h1>My Action List</h1>
-        <p id=""><a href="">Module list</a></p>
+        <p id=""><a href="">Nav to Module page</a></p>
         <p id=""><a href="">Nav to another page</a></p>
+        <p id=""><a href="log_out.php">Sign out</a></p>
     </header>
     <main>
 

@@ -16,9 +16,8 @@
 
 </head>
 <body>
-  <h1>PHP Login form without session</h1>
+  <h1>Sign in</h1>
 
-      <h3>Login form</h3>
       <br><br>
       <form method="post" action="login.php">
 

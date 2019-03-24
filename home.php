@@ -1,3 +1,12 @@
+<?php
+session_start();
+if(!IsSet($_SESSION["userID"]))
+  {header("location: login_form.php");
+  exit();
+  }
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -21,6 +30,7 @@
 <p><a href="full_list.php">My action list</a></p>
 <p><a href="module.php">Module list</a></p>
 <p><a href="overview_list.php">Overview</a></p>
+ <p><a href="log_out.php">Sign out</a></p>
 
 </body>
 </html>
