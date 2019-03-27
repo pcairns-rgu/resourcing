@@ -25,7 +25,7 @@ CREATE TABLE department(
                          completed bit,
                          user_id int,
                          PRIMARY KEY(id),
-                         FOREIGN KEY (user_id) REFERENCES user(id)
+                         CONSTRAINT FK_department FOREIGN KEY (user_id) REFERENCES user(id)
 );
 
 
@@ -40,7 +40,7 @@ CREATE TABLE module
   completed bit,
   user_id   int,
   PRIMARY KEY (id),
-  FOREIGN KEY (user_id) REFERENCES user (id)
+  CONSTRAINT FK_module FOREIGN KEY (user_id) REFERENCES user(id)
 );
 
 CREATE TABLE private(
@@ -52,5 +52,5 @@ CREATE TABLE private(
                       completed bit,
                       user_id int,
                       PRIMARY KEY(id),
-                      FOREIGN KEY (user_id) REFERENCES user (id)
+                      CONSTRAINT FK_private FOREIGN KEY (user_id) REFERENCES user(id)
 )

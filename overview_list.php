@@ -34,9 +34,20 @@
 
             <p>Actions required</p>
 
+        <div class="dropdown">
+            <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+               Select staff member
+            </button>
+            <div class="dropdown-menu">
+                <a class="dropdown-item" href="#">Link 1</a>
+                <a class="dropdown-item" href="#">Link 2</a>
+                <a class="dropdown-item" href="#">Link 3</a>
+            </div>
+        </div>
 
             <h3>Module</h3>
-            <table class="module">
+
+        <table class="module">
 
                 <tr>
                     <th>Date</th>
@@ -61,9 +72,17 @@
                 </tr>
 
             </table>
+
+
+
             <br><br>
             <h3>Department</h3>
-            <table class="department">
+<button type="button" data-toggle="collapse" data-target="#demo">Show all tasks</button>
+<br><br>
+<div id="demo" class="collapse">
+
+
+<table class="department">
 
                 <tr>
                     <th>Date</th>
@@ -87,7 +106,7 @@
 
             </table>
 
-
+</div>
 
 
 

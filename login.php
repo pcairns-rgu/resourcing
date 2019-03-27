@@ -26,6 +26,7 @@ if(mysqli_num_rows($result)== 1)
 {
 
     $_SESSION["userID"]=$username;
+
     header("location: home.php");
     exit();
 
