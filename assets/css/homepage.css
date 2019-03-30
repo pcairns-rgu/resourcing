@@ -1,9 +1,3 @@
-body{
-
-    background-image: url("/assets/images/seesaw.jpg");
-
-
-}
 
 #login{
      float:right;
@@ -14,6 +8,7 @@ h1{
     color: darkgoldenrod;
     text-align: center;
     letter-spacing: 0.1em;
+    font-size: 400%;
 }
 
 h3{
@@ -21,4 +16,37 @@ h3{
     text-align: center;
 
 
+}
+
+#banner {
+    background-image: url("../images/cover2.png");
+
+    background-repeat: no-repeat;
+    background-position: center;
+   height: 600px;
+}
+
+.right{
+    float:right;
+}
+
+.colour{
+    background-color: white;
+}
+
+.connect{
+    float: right;
+
+}
+
+.nav-item{
+    padding-right: 40px;
+}
+
+.navbar-text{
+    padding-right: 60px;
+}
+
+.connect>p>.pad{
+    padding-right: 20px;
 }

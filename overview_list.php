@@ -5,6 +5,8 @@
 * Date: 16/03/2019
 * Time: 09:28
 */
+session_start();
+include("config.php");
 ?>
 
 <!DOCTYPE html>

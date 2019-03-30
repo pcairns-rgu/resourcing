@@ -17,43 +17,55 @@
 </head>
 
 <!--- Main body --->
-<body >
-<div class="container">
+<body>
+<div class="container colour">
 
 
   <header>
-      <p id="login"><a href="login_form.php">Log-in</a></p>
-      <p id="login"><a href="register_form.php">Register</a></p>
+
+      <nav class="navbar navbar-expand-sm right">
+          <ul class="navbar-nav">
+      <li class="nav-item"><a href="login_form.php">Log-in</a></li>
+          </ul>
+      </nav>
   </header>
 <main>
+    <div id="banner">
     <h1>FORECAST</h1>
     <h3>COMBINING TASK MANAGEMENT WITH RESOURCING</h3>
-    <img src="assets/images/seesaw.jpg" alt="seesaw image"/>
+    </div>
+
 
 </main>
+
   <!---Start of footer -->
 <hr />
 <footer>
-    <div class="connect">
     <p>FORECAST - FORESEE ORGANISE RESOURCE EFFICIENT COLLABORATE ACHIEVE SHARE TRANSFER </p>
-        <p>Connect with us:</p>
+
+  <div class="connect">
+        <p class="pad">Connect with us: <span class="addthis_inline_follow_toolbox connect"></span></p>
 
 
         <!-- Go to www.addthis.com/dashboard to customize your tools -->
-        <div class="addthis_inline_follow_toolbox"></div>
-    </div>
 
-    <div class="bottom">
-      <p>&copy; 2019 Pauline Cairns</p>
-        <nav>
-            <ul>
-              <li><a href="contact.html">Contact</a></li>
-              <li><a href="about.html">About</a></li>
-              <li><a href="t&c.html">T&Cs</a></li>
-              <li><a href="cookies.html">Cookies</a></li>
+  </div>
+
+
+
+        <nav class="navbar navbar-expand-sm" >
+            <span class="navbar-text">
+   &copy; 2019 Pauline Cairns
+  </span>
+            <ul class="navbar-nav">
+              <li class="nav-item"><a href="contact.html">Contact</a></li>
+              <li class="nav-item"><a href="about.html">About</a></li>
+              <li class="nav-item"><a href="t&c.html">T&Cs</a></li>
+              <li class="nav-item"><a href="cookies.html">Cookies</a></li>
             </ul>
         </nav>
-    </div>
+
+
 </footer>
 
 </div>

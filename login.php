@@ -11,6 +11,7 @@ include("config.php");
 if(empty($_POST["username"])|| empty($_POST["pwd"]))
 {
     echo "All fields are required";
+    exit();
 }
 else{
 
@@ -31,8 +32,14 @@ if(mysqli_num_rows($result)== 1)
     exit();
 
 }else{
+
     echo "Incorrect username or password";
+     echo "<br>";
+    echo "Please note that access to this website requires authorisation from the head of the school. ";
 }
+echo "<br>";
+echo "If you should have access and have not received login credentials, please contact the school office.";
+exit();
 
 
 ?>
