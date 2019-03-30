@@ -11,7 +11,7 @@
     <link rel="stylesheet"
           href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/homepage.css">
-    <link rel="stylesheet" href="assets/css/colours.css">
+
     <link rel="stylesheet" href="assets/css/style.css">
 
 </head>
@@ -29,7 +29,7 @@
           </ul>
       </nav>
   </header>
-<main>
+<main class="middle">
     <div id="banner">
     <h1>FORECAST</h1>
     <h3>COMBINING TASK MANAGEMENT WITH RESOURCING</h3>
@@ -41,14 +41,15 @@
   <!---Start of footer -->
 <hr />
 <footer>
-    <p>FORECAST - FORESEE ORGANISE RESOURCE EFFICIENT COLLABORATE ACHIEVE SHARE TRANSFER </p>
+    <div class="row">
+    <p class="col-sm-8 forecast">FORECAST - FORESEE ORGANISE RESOURCE EXCEL COLLABORATE ACHIEVE SHARE TRANSFER </p>
 
-  <div class="connect">
-        <p class="pad">Connect with us: <span class="addthis_inline_follow_toolbox connect"></span></p>
+  <div class="col-sm-4">
+        <p>Connect with us: <span class="addthis_inline_follow_toolbox connect"></span></p>
 
 
         <!-- Go to www.addthis.com/dashboard to customize your tools -->
-
+  </div>
   </div>
 
 

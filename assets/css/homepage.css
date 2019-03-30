@@ -36,6 +36,7 @@ h3{
 
 .connect{
     float: right;
+    padding-right: 40px;
 
 }
 
@@ -47,6 +48,7 @@ h3{
     padding-right: 60px;
 }
 
-.connect>p>.pad{
-    padding-right: 20px;
+.middle{
+    padding-top: 80px;
+
 }
