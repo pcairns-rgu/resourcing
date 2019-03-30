@@ -42,7 +42,7 @@
 <hr />
 <footer>
     <div class="row">
-    <p class="col-sm-8 forecast">FORECAST - FORESEE ORGANISE RESOURCE EXCEL COLLABORATE ACHIEVE SHARE TRANSFER </p>
+    <div class="col-sm-8 forecast">FORECAST - FORESEE ORGANISE RESOURCE EXCEL COLLABORATE ACHIEVE SHARE TRANSFER </div>
 
   <div class="col-sm-4">
         <p>Connect with us: <span class="addthis_inline_follow_toolbox connect"></span></p>
