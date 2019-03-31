@@ -1,54 +1,29 @@
+/* Make login at top right hand corner */
+.right{
+    float:right;
+}
 
-#login{
-     float:right;
-border: lightblue solid 2px;
- }
-
+/* Main title*/
 h1{
     color: darkgoldenrod;
     text-align: center;
     letter-spacing: 0.1em;
     font-size: 400%;
+    padding-top: 150px;
+
 }
 
+/* Subtitle*/
 h3{
     color: lightslategray;
     text-align: center;
-
-
 }
 
+/* Image*/
 #banner {
     background-image: url("../images/cover2.png");
 
     background-repeat: no-repeat;
     background-position: center;
-   height: 600px;
-}
-
-.right{
-    float:right;
-}
-
-.colour{
-    background-color: white;
-}
-
-.connect{
-    float: right;
-    padding-right: 40px;
-
-}
-
-.nav-item{
-    padding-right: 40px;
-}
-
-.navbar-text{
-    padding-right: 60px;
-}
-
-.middle{
-    padding-top: 80px;
-
+   height: 450px;
 }

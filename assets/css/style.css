@@ -25,4 +25,27 @@ a:link{
 
 body{
     background-color: #E7F4FF;
+
+}
+
+
+.colour{
+    background-color: white;
+    border-left: 1px solid lightsteelblue;
+    border-right: 1px solid lightsteelblue;
+}
+
+
+.connect{
+    float: right;
+    padding-right: 40px;
+
+}
+
+.nav-item{
+    padding-right: 40px;
+}
+
+.navbar-text{
+    padding-right: 100px;
 }
