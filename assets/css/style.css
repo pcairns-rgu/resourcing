@@ -12,6 +12,8 @@ a.youtube {
 .logo{
     color: darkgoldenrod;
     letter-spacing: 0.1em;
+    padding-top: 25px;
+    padding-bottom: 15px;
 }
 
 a:link{
@@ -48,4 +50,12 @@ body{
 
 .navbar-text{
     padding-right: 100px;
+}
+
+h4{
+    color: lightslategray;
+}
+
+h3{
+    color: saddlebrown;
 }

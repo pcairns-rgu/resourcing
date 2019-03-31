@@ -10,11 +10,10 @@ h1{
     letter-spacing: 0.1em;
     font-size: 400%;
     padding-top: 150px;
-
 }
 
 /* Subtitle*/
-h3{
+.subtitle{
     color: lightslategray;
     text-align: center;
 }

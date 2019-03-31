@@ -37,7 +37,7 @@
   <main>
 
     <h1>FORECAST</h1>
-    <h3>COMBINING TASK MANAGEMENT WITH RESOURCING</h3>
+    <h3 class="subtitle">COMBINING TASK MANAGEMENT WITH RESOURCING</h3>
     <div id="banner">
     </div>
 
