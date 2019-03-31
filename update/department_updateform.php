@@ -24,14 +24,14 @@
 
 </head>
 <body>
-<h1>Department task required</h1>
+<h1>Department </h1>
 
-<h3>Set up task </h3>
+<h3>Update task </h3>
 <br><br>
 
 <?php
 include("../config.php");
-$sql_query="SELECT * FROM department WHERE id=1";
+$sql_query="SELECT * FROM department WHERE id=2";
 
 $result = $db->query($sql_query);
 while($row = $result->fetch_array()) {
@@ -39,6 +39,7 @@ while($row = $result->fetch_array()) {
     $task = $row['task'];
     $comments = $row['comments'];
     $deadline = $row['deadline'];
+    $completed=$row['completed'];
     echo "
 <form method='post' action='update_department_task.php'>
 
@@ -48,6 +49,9 @@ while($row = $result->fetch_array()) {
     <textarea name='comments'>$comments</textarea><br><br>
     <label>Deadline </label><br>
     <input type='date' name='deadline' value='$deadline' /><br><br>
+    <label>Completed</label>
+    <input type='radio' name='completed' value='Yes' />Yes
+    <input type='radio' name='completed' value='No' />No
     <input type='submit' name='submit' value='Submit' />
 </form>";
 }

@@ -11,6 +11,7 @@ $task = $_POST["task"];
 $comments=$_POST["comments"];
 $deadline=$_POST["deadline"];
 
+
 $sql = "INSERT INTO department (today, task, comments, deadline) VALUES (curdate(),'$task','$comments','$deadline')";
 
 

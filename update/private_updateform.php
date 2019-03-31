@@ -39,6 +39,7 @@ while($row = $result->fetch_array()) {
     $task = $row['task'];
     $comments = $row['comments'];
     $deadline = $row['deadline'];
+    $completed=$row['completed'];
     echo "
 <form method='post' action='update_private_task.php'>
 
@@ -48,6 +49,9 @@ while($row = $result->fetch_array()) {
     <textarea name='comments'>$comments</textarea><br><br>
     <label>Deadline </label><br>
     <input type='date' name='deadline' value='$deadline' /><br><br>
+     <label>Completed</label>
+    <input type='radio' name='completed' value='Yes' />Yes
+    <input type='radio' name='completed' value='No' />No
     <input type='submit' name='submit' value='Submit' />
 </form>";
 }

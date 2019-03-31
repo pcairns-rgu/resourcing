@@ -30,7 +30,7 @@ CREATE TABLE department(
                          task varchar(250) NOT NULL,
                          comments varchar(250),
                          deadline date,
-                         completed bit,
+                         completed char(3),
                          user_id int,
                          PRIMARY KEY(id),
                          CONSTRAINT FK_department FOREIGN KEY (user_id) REFERENCES user(id)
@@ -45,7 +45,7 @@ CREATE TABLE module_task
   task      varchar(250) NOT NULL,
   comments  varchar(250),
   deadline  date,
-  completed bit,
+  completed char(3),
   user_id   int,
   PRIMARY KEY (id),
   CONSTRAINT FK_module_task_user FOREIGN KEY (user_id) REFERENCES user(id),
@@ -58,7 +58,7 @@ CREATE TABLE private(
                       task varchar(250) NOT NULL,
                       comments varchar(250),
                       deadline date,
-                      completed bit,
+                      completed char(3),
                       user_id int,
                       PRIMARY KEY(id),
                       CONSTRAINT FK_private FOREIGN KEY (user_id) REFERENCES user(id))

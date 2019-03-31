@@ -11,8 +11,9 @@ $user_id = $_GET["user_id"];
 $task = $_POST["task"];
 $comments=$_POST["comments"];
 $deadline=$_POST["deadline"];
+$completed=$_POST["completed"];
 
-$sql = "UPDATE private SET task='$task', comments='$comments', deadline='$deadline' WHERE id=2";
+$sql = "UPDATE private SET task='$task', comments='$comments', deadline='$deadline', completed='$completed' WHERE id=2";
 
 
 if(mysqli_query($db, $sql)){
