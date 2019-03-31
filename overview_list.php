@@ -113,27 +113,10 @@ include("config.php");
 
 
     </main>
-    <hr />
-    <footer>
-        <div class="connect">
-            <p>FORECAST - FORESEE ORGANISE RESOURCE EFFICIENT COLLABORATE ACHIEVE SHARE TRANSFER </p>
-            <p>Connect with us:</p>
+    <?php
 
-
-            <!-- Go to www.addthis.com/dashboard to customize your tools -->
-            <div class="addthis_inline_follow_toolbox"></div>
-        </div>
-        <div class="bottom">
-            <p>&copy; 2019 Pauline Cairns</p>
-            <nav>
-                <ul>
-                    <li><a href="contact.html">Contact</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="t&c.html">T&Cs</a></li>
-                    <li><a href="cookies.html">Cookies</a></li>
-                </ul>
-            </nav>
-        </div>
+    include("footer.html");
+    ?>
 
         <!-- Go to www.addthis.com/dashboard to customize your tools -->
 
@@ -141,7 +124,7 @@ include("config.php");
 
 
 
-    </footer>
+
 </div>
 <!-- Go to www.addthis.com/dashboard to customize your tools -->
 <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5c853fcb8b82e462"></script>

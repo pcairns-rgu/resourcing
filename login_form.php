@@ -10,31 +10,45 @@
 
     <link rel="stylesheet"
           href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/css/colours.css">
+
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/form.css">
 
 </head>
 <body>
-  <h1>Sign in</h1>
+<div class="container colour">
+<header>
+    <a href="index.php"><h2 class="logo">FORECAST</h2></a>
+</header>
+ <div class=" d-flex justify-content-center">
 
-      <br><br>
+
       <form method="post" action="login.php">
-
+          <h1 class="forecast drop">Log-in</h1>
                    <label>Username: </label><br>
           <input type="text" name="username" placeholder="username" /><br><br>
           <label>Password: </label><br>
           <input type="password" name="pwd" placeholder="password" /><br><br>
 
-          <input type="submit" name="submit" value="login" />
+          <input type="submit" name="submit" value="Log-in" />
       </form>
       <div class="error"><?php //echo $error?><?php // echo $username; echo $user_password ?>
 
 
-
+      </div>
 
   </div>
 
+
+<?php
+include("footer.html");
+?>
+</div>
+
+<!--  www.addthis.com/dashboard script for connect tools -->
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5c853fcb8b82e462"></script>
+<!-- Bootstrap script for general CSS layout-->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 
 </body>
 </html>

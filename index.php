@@ -47,11 +47,8 @@
 <!-- Start of footer -->
 
       <?php
-      include("footer.php");
+      include("footer.html");
       ?>
-
-<!-- End of footer -->
-
   <!-- End of <div class="container colour">-->
   </div>
 
