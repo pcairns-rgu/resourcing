@@ -1,0 +1,29 @@
+<!-- Start of footer -->
+
+<footer>
+    <hr />
+    <div class="row">
+
+        <div class="col-sm-8 forecast">FORECAST - FORESEE ORGANISE RESOURCE EXCHANGE COLLABORATE ACHIEVE SHARE TRANSFER </div>
+
+        <div class="col-sm-4">
+            <p>Connect with us: <span class="addthis_inline_follow_toolbox connect"></span></p>
+        </div>
+
+    </div>
+
+    <!-- Bottom nav bar -->
+    <nav class="navbar navbar-expand-sm">
+        <span class="navbar-text">
+         &copy; 2019 Pauline Cairns
+        </span>
+        <ul class="navbar-nav">
+            <li class="nav-item"><a href="contact.html">Contact</a></li>
+            <li class="nav-item"><a href="about.html">About</a></li>
+            <li class="nav-item"><a href="t&c.html">T&Cs</a></li>
+            <li class="nav-item"><a href="cookies.html">Cookies</a></li>
+        </ul>
+    </nav>
+
+</footer>
+<!-- End of footer -->
