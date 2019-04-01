@@ -6,11 +6,45 @@
  * Time: 14:56
  */
 
-$target_dir = "uploads/";
-$target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
-$uploadOk = 1;
-$imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
-// Check if image file is a actual image or fake image
+include("config.php");
+
+$statusMsg='';
+$targetDir = "uploads/";
+$fileName=basename($_FILES["file"]["name"]);
+$targetFilePath = $targetDir . $fileName;
+$fileType = strtolower(pathinfo($targetFilePath,PATHINFO_EXTENSION));
+
+
+
+
+
+if(isset($_POST["submit"]) && !empty($_FILES["file"]["name"])){
+    // Allow certain file formats
+    $allowTypes = array('jpg','png','jpeg','gif','pdf');
+    if(in_array($fileType, $allowTypes)){
+        if(move_uploaded_file($_FILES["file"]["tmp_name"], $targetFilePath)){
+            // Insert image file name into database
+            $insert = $db->query("INSERT INTO images (`filename`, `mod_code`) VALUES ('".$fileName."', 'SCDM001')");
+            if($insert){
+                $statusMsg = "The file ".$fileName. " has been uploaded successfully.";
+            }else{
+                $statusMsg = "File upload failed, please try again.";
+            }
+        }else {
+            $statusMsg = "Sorry, there was an error uploading your file.";
+        }
+    }else{
+        $statusMsg = 'Sorry, only JPG, JPEG, PNG, GIF, & PDF files are allowed to upload.';
+    }}else{
+    $statusMsg = 'Please select a file to upload.';
+}
+
+// Display status message
+echo $statusMsg;
+
+
+
+/* Check if image file is a actual image or fake image
 if(isset($_POST["submit"])) {
     $check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
     if($check !== false) {
@@ -22,3 +56,4 @@ if(isset($_POST["submit"])) {
     }
 }
 ?>
+*/

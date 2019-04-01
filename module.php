@@ -6,6 +6,7 @@
 * Time: 09:28
 */
 session_start();
+include('config.php');
 ?>
 
 <!DOCTYPE html>
@@ -72,11 +73,27 @@ session_start();
 
         <br><br>
         <form action="upload.php" method="post" enctype="multipart/form-data">
-            Select image to upload:
-            <input type="file" name="fileToUpload" id="fileToUpload">
-            <input type="submit" value="Upload Image" name="submit">
+            Select file to upload:
+            <input type="file" name="file">
+            <input type="submit" value="Upload" name="submit">
         </form>
         <br><br>
+
+        <?php
+
+
+        // Get images from the database
+        $query = $db->query("SELECT * FROM images");
+
+        if($query->num_rows > 0){
+            while($row = $query->fetch_assoc()){
+                $imageURL = 'uploads/'.$row["filename"];
+                ?>
+                <img src="<?php echo $imageURL; ?>" alt="" />
+            <?php }
+        }else{ ?>
+            <p>No image(s) found...</p>
+        <?php } ?>
 
 
         <table class="module">
