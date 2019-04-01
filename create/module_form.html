@@ -10,21 +10,30 @@
 
     <link rel="stylesheet"
           href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../assets/css/colours.css">
     <link rel="stylesheet" href="../assets/css/style.css">
     <link rel="stylesheet" href="../assets/css/form.css">
 
 </head>
 <body>
-<h1>Module task required</h1>
 
-<h3>Set up task </h3>
-<br><br>
+<div class="container colour">
+
+    <header>
+        <a href="../index.php"><h2 class="logo">FORECAST</h2></a>
+    </header>
+
+    <main>
+    <div class=" d-flex justify-content-center">
+
+
+
+<br>
 <form method="post" action="input_module_task.php">
+    <h1 class="forecast">Module task</h1>
+    <br>
 
-
-    <label>Module </label><br>
-    <input type="text" name="module" placeholder="module number" autofocus required/><br><br>
+    <label>Module</label><br>
+    <input type="text" name="module" placeholder="module id" autofocus required/><br><br>
     <label>Task </label><br>
     <input type="text" name="task" placeholder="action required" required/><br><br>
     <label>Notes/Status </label><br>
@@ -33,6 +42,8 @@
     <input type="date" name="deadline" placeholder="deadline" /><br><br>
     <input type="submit" name="submit" value="Submit" />
 </form>
-
+    </div>
+    </main>
+</div>
 </body>
 </html>

@@ -18,16 +18,24 @@
 
     <link rel="stylesheet"
           href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../assets/css/colours.css">
+
     <link rel="stylesheet" href="../assets/css/style.css">
     <link rel="stylesheet" href="../assets/css/form.css">
 
 </head>
 <body>
-<h1>Department </h1>
+<div class="container colour">
+    <header>
+        <a href="../index.php"><h2 class="logo">FORECAST</h2></a>
+    </header>
 
-<h3>Update task </h3>
-<br><br>
+    <main>
+        <div class=" d-flex justify-content-center">
+
+
+
+
+<br>
 
 <?php
 include("../config.php");
@@ -42,20 +50,24 @@ while($row = $result->fetch_array()) {
     $completed=$row['completed'];
     echo "
 <form method='post' action='update_department_task.php'>
-
+    <h1 class='forecast'>Update task</h1>
     <label>Task </label><br>
     <input type='text' name='task' value='$task' autofocus required/><br><br>
     <label>Notes/Status </label><br>
     <textarea name='comments'>$comments</textarea><br><br>
     <label>Deadline </label><br>
     <input type='date' name='deadline' value='$deadline' /><br><br>
-    <label>Completed</label>
+    <label>Completed:      </label>
     <input type='radio' name='completed' value='Yes' />Yes
     <input type='radio' name='completed' value='No' />No
+    <br><br>
     <input type='submit' name='submit' value='Submit' />
 </form>";
 }
 ?>
+        </div>
+        </main>
+</div>
 </body>
 </html>
 

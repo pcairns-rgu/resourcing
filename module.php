@@ -24,7 +24,7 @@ session_start();
 </head>
 <!--- Main body --->
 <body>
-<div class="container">
+<div class="container colour">
     <header>
         <a href="index.php"><h2 class="logo">FORECAST</h2></a>
         <h1>Module Action List</h1>

@@ -64,6 +64,27 @@ CREATE TABLE private(
                       CONSTRAINT FK_private FOREIGN KEY (user_id) REFERENCES user(id))
 ;
 
+
+CREATE TABLE images(
+                     id int NOT NULL AUTO_INCREMENT,
+                     filename varchar(255) NOT NULL,
+                     mod_code char(7),
+                     PRIMARY KEY(id),
+                     CONSTRAINT FK_images FOREIGN KEY(mod_code) REFERENCES module(code) ON DELETE CASCADE ON UPDATE CASCADE
+);
+
+CREATE TABLE teaches_module(
+                             mod_code char(7),
+                             user_id int(7),
+                             PRIMARY KEY(mod_code, user_id),
+                             CONSTRAINT FK_teaches_module_user FOREIGN KEY(user_id) REFERENCES user(id) ON DELETE CASCADE ON UPDATE CASCADE,
+                             CONSTRAINT FK_teaches_module_module FOREIGN KEY(mod_code) REFERENCES module(code) ON DELETE CASCADE ON UPDATE CASCADE
+
+
+
+);
+
+
 INSERT INTO module VALUES ('SCDM001', 'Data Visualisation');
 INSERT INTO module VALUES ('SCDM002', 'Databases');
 INSERT INTO module VALUES ('SCDM003', 'Data Dashboards');
@@ -71,11 +92,24 @@ INSERT INTO module VALUES ('SCDM004', 'Data Analysis');
 INSERT INTO module VALUES ('SCDM005', 'Website Development');
 INSERT INTO module VALUES ('SCDM006', 'R Programming');
 
-INSERT INTO 'user' ('firstname', 'lastname', 'username', 'pwd') VALUES ('John', 'Rebus', 'jr001', 'edinburgh');
-INSERT INTO 'user' ('firstname', 'lastname', 'username', 'pwd') VALUES ('Jim', 'Taggart', 'jt002', 'glasgow');
-INSERT INTO 'user' ('firstname', 'lastname', 'username', 'pwd') VALUES ('Sherlock', 'Holmes', 'sh003', 'london');
-INSERT INTO 'user' ('firstname', 'lastname', 'username', 'pwd') VALUES ('James', 'Bond', 'jb007', 'international');
-INSERT INTO 'user' ('firstname', 'lastname', 'username', 'pwd') VALUES ('Jessica', 'Fletcher', 'jf004', 'maine');
-INSERT INTO 'user' ('firstname', 'lastname', 'username', 'pwd') VALUES ('Kelly', 'Garrett', 'kg005', 'losangeles');
-INSERT INTO 'user' ('firstname', 'lastname', 'username', 'pwd') VALUES ('Kris', 'Munroe', 'km006', 'bosley');
-INSERT INTO 'user' ('firstname', 'lastname', 'username', 'pwd') VALUES ('Sabrina', 'Duncan', 'sd008', 'charlie');
+INSERT INTO user ('firstname', 'lastname', 'username', 'pwd') VALUES ('John', 'Rebus', 'jr001', 'edinburgh');
+INSERT INTO user ('firstname', 'lastname', 'username', 'pwd') VALUES ('Jim', 'Taggart', 'jt002', 'glasgow');
+INSERT INTO user ('firstname', 'lastname', 'username', 'pwd') VALUES ('Sherlock', 'Holmes', 'sh003', 'london');
+INSERT INTO user ('firstname', 'lastname', 'username', 'pwd') VALUES ('James', 'Bond', 'jb007', 'international');
+INSERT INTO user ('firstname', 'lastname', 'username', 'pwd') VALUES ('Jessica', 'Fletcher', 'jf004', 'maine');
+INSERT INTO user ('firstname', 'lastname', 'username', 'pwd') VALUES ('Kelly', 'Garrett', 'kg005', 'losangeles');
+INSERT INTO user ('firstname', 'lastname', 'username', 'pwd') VALUES ('Kris', 'Munroe', 'km006', 'bosley');
+INSERT INTO user ('firstname', 'lastname', 'username', 'pwd') VALUES ('Sabrina', 'Duncan', 'sd008', 'charlie');
+
+INSERT INTO teaches_module VALUES('SCDM001', 1);
+INSERT INTO teaches_module VALUES('SCDM006', 2);
+INSERT INTO teaches_module VALUES('SCDM002', 3);
+INSERT INTO teaches_module VALUES('SCDM003', 4);
+INSERT INTO teaches_module VALUES('SCDM004', 5);
+INSERT INTO teaches_module VALUES('SCDM005', 6);
+INSERT INTO teaches_module VALUES('SCDM006', 7);
+INSERT INTO teaches_module VALUES('SCDM001', 8);
+INSERT INTO teaches_module VALUES('SCDM002', 6);
+INSERT INTO teaches_module VALUES('SCDM003', 7);
+INSERT INTO teaches_module VALUES('SCDM004', 8);
+INSERT INTO teaches_module VALUES('SCDM005', 5);

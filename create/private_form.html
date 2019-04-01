@@ -10,17 +10,24 @@
 
     <link rel="stylesheet"
           href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../assets/css/colours.css">
+
     <link rel="stylesheet" href="../assets/css/style.css">
     <link rel="stylesheet" href="../assets/css/form.css">
 
 </head>
 <body>
-<h1>Private task</h1>
+<div class="container colour">
+    <header>
+        <a href="../index.php"><h2 class="logo">FORECAST</h2></a>
+    </header>
 
-<h3>Set up task</h3>
-<br><br>
+    <main>
+        <div class=" d-flex justify-content-center">
+
+
+<br>
 <form method="post" action="input_private_task.php">
+    <h1 class="forecast">Private task</h1>
 
     <label>Task </label><br>
     <input type="text" name="task" placeholder="action required" autofocus required/><br><br>
@@ -30,6 +37,8 @@
     <input type="date" name="deadline" placeholder="deadline" /><br><br>
     <input type="submit" name="submit" value="Submit" />
 </form>
-
+        </div>
+    </main>
+</div>
 </body>
 </html>

@@ -28,7 +28,7 @@ include("config.php");
 <div class="container colour">
     <header>
         <a href="index.php"><h2 class="logo">FORECAST</h2></a>
-        <h3 class="center">My Action List</h3>
+        <h2 class=" forecast center">My Action List</h2>
         <ul class="nav nav-pills">
 
             <li class="nav-item dropdown">
