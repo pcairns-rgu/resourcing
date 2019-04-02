@@ -32,7 +32,6 @@ include('config.php');
             <a href="index.php"><h2 class="col logo">FORECAST</h2></a>
             <h2 class="col forecast center">Module actions</h2>
             <ul class="col nav nav-pills">
-
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">My Account</a>
                     <div class="dropdown-menu">
@@ -161,7 +160,7 @@ include('config.php');
         <table class='cabinet'>
 
             <tr>
-                <th>Add to cabinet</th>
+                <th>Filing cabinet</th>
             </tr>
             <tr>
                 <th>
@@ -199,6 +198,41 @@ include('config.php');
         </table>
 
         <br><br>
+
+
+        <table class='cabinet'>
+
+            <tr>
+                <th>Articles/documents</th>
+            </tr>
+        </table>
+        <br><br>
+
+
+        <table class='cabinet'>
+
+            <tr>
+                <th>Reminders</th>
+            </tr>
+        </table>
+        <br><br>
+
+        <table class='cabinet'>
+
+            <tr>
+                <th>Pending deadlines</th>
+            </tr>
+        </table>
+        <br><br>
+
+        <table class='cabinet'>
+
+            <tr>
+                <th>Add note</th>
+            </tr>
+        </table>
+        <br><br>
+
     </main>
     <hr />
 

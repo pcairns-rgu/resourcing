@@ -39,7 +39,7 @@ include("config.php");
                 <div class="dropdown-menu">
                     <a class="dropdown-item" href="#">Overview</a>
                     <a class="dropdown-item" href="#">Module</a>
-                    <a class="dropdown-item" href="#">Update password</a>
+                    <a class="dropdown-item" href="./update/password_updateform.php">Update password</a>
                     <a class="dropdown-item" href="log_out.php">Sign out</a>
                 </div>
             </li>

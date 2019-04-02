@@ -17,7 +17,7 @@ CREATE TABLE user(
                    firstname varchar(50) NOT NULL,
                    lastname varchar(50)NOT NULL,
                    username varchar(50) NOT NULL,
-                   pwd varchar(15) NOT NULL,
+                   pwd varchar(255) NOT NULL,
                    PRIMARY KEY(id)
 );
 
@@ -56,16 +56,18 @@ CREATE TABLE module_task
   CONSTRAINT FK_module_task_module FOREIGN KEY (code) REFERENCES module(code)
 );
 
-CREATE TABLE private(
-                      id int(7) NOT NULL AUTO_INCREMENT,
-                      today DATE,
-                      task varchar(250) NOT NULL,
-                      comments varchar(250),
-                      deadline date,
-                      completed char(3),
-                      user_id int,
-                      PRIMARY KEY(id),
-                      CONSTRAINT FK_private FOREIGN KEY (user_id) REFERENCES user(id))
+CREATE TABLE private
+(
+  id        int(7)       NOT NULL AUTO_INCREMENT,
+  today     DATE,
+  task      varchar(250) NOT NULL,
+  comments  varchar(250),
+  deadline  date,
+  completed char(3),
+  user_id   int,
+  PRIMARY KEY (id),
+  CONSTRAINT FK_private FOREIGN KEY (user_id) REFERENCES user (id) ON DELETE CASCADE ON UPDATE CASCADE
+)
 ;
 
 
@@ -74,15 +76,15 @@ CREATE TABLE images(
                      filename varchar(255) NOT NULL,
                      mod_code char(7),
                      PRIMARY KEY(id),
-                     CONSTRAINT FK_images FOREIGN KEY(mod_code) REFERENCES module(code) ON DELETE CASCADE ON UPDATE CASCADE
+                     CONSTRAINT FK_images FOREIGN KEY(mod_code) REFERENCES module(code) ON UPDATE CASCADE
 );
 
 CREATE TABLE teaches_module(
                              mod_code char(7),
                              user_id int(7),
                              PRIMARY KEY(mod_code, user_id),
-                             CONSTRAINT FK_teaches_module_user FOREIGN KEY(user_id) REFERENCES user(id) ON DELETE CASCADE ON UPDATE CASCADE,
-                             CONSTRAINT FK_teaches_module_module FOREIGN KEY(mod_code) REFERENCES module(code) ON DELETE CASCADE ON UPDATE CASCADE
+                             CONSTRAINT FK_teaches_module_user FOREIGN KEY(user_id) REFERENCES user(id) ON UPDATE CASCADE,
+                             CONSTRAINT FK_teaches_module_module FOREIGN KEY(mod_code) REFERENCES module(code) ON UPDATE CASCADE
 
 
 
