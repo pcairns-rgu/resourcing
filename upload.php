@@ -20,8 +20,7 @@ $fileType = strtolower(pathinfo($targetFilePath,PATHINFO_EXTENSION));
 
 if(isset($_POST["submit"]) && !empty($_FILES["file"]["name"])){
     // Allow certain file formats
-    $allowTypes = array('jpg','png','jpeg','gif','pdf');
-    if(in_array($fileType, $allowTypes)){
+
         if(move_uploaded_file($_FILES["file"]["tmp_name"], $targetFilePath)){
             // Insert image file name into database
             $insert = $db->query("INSERT INTO images (`filename`, `mod_code`) VALUES ('".$fileName."', 'SCDM001')");
@@ -34,13 +33,15 @@ if(isset($_POST["submit"]) && !empty($_FILES["file"]["name"])){
             $statusMsg = "Sorry, there was an error uploading your file.";
         }
     }else{
-        $statusMsg = 'Sorry, only JPG, JPEG, PNG, GIF, & PDF files are allowed to upload.';
-    }}else{
     $statusMsg = 'Please select a file to upload.';
 }
 
 // Display status message
+
 echo $statusMsg;
+header("location: module.php");
+
+
 
 
 

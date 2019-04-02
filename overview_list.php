@@ -27,23 +27,50 @@ include("config.php");
 <body>
 <div class="container colour">
     <header>
-        <a href="index.php"><h2 class="logo">FORECAST</h2></a>
-        <h1>Actions overview</h1>
-        <p id=""><a href="">Module list</a></p>
-        <p id=""><a href="">Nav to another page</a></p>
+
+        <nav class="navbar navbar-expand-sm">
+            <div class="row">
+                <a href="index.php"><h2 class="col logo">FORECAST</h2></a>
+                <h2 class="col forecast center">Actions overview</h2>
+                <ul class="col nav nav-pills">
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">My Account</a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="#">My task list</a>
+                            <a class="dropdown-item" href="#">Module</a>
+                            <a class="dropdown-item" href="#">Update password</a>
+                            <a class="dropdown-item" href="log_out.php">Sign out</a>
+                        </div>
+                    </li>
+
+                </ul>
+            </div>
+        </nav>
+
+
     </header>
     <main>
-
-            <p>Actions required</p>
 
         <div class="dropdown">
             <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
                Select staff member
             </button>
             <div class="dropdown-menu">
-                <a class="dropdown-item" href="#">Link 1</a>
-                <a class="dropdown-item" href="#">Link 2</a>
-                <a class="dropdown-item" href="#">Link 3</a>
+
+                <?php
+                $sql_query="SELECT * FROM user";
+                $result = $db->query($sql_query);
+                while($row = $result->fetch_array()) {
+                    $firstname = $row['firstname'];
+                    $lastname = $row['lastname'];
+
+                    echo "<a class='dropdown-item' href='#'>{$firstname} {$lastname}</a>";
+            
+
+       };
+                echo "<a class='dropdown-item' href='#'>All</a>";
+              ?>
             </div>
         </div>
 

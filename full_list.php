@@ -27,9 +27,12 @@ include("config.php");
 <body>
 <div class="container colour">
     <header>
-        <a href="index.php"><h2 class="logo">FORECAST</h2></a>
-        <h2 class=" forecast center">My Action List</h2>
-        <ul class="nav nav-pills">
+
+        <nav class="navbar navbar-expand-sm">
+            <div class="row">
+        <a href="index.php"><h2 class="col logo">FORECAST</h2></a>
+        <h2 class="col forecast center">My Action List</h2>
+        <ul class="col nav nav-pills">
 
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">My Account</a>
@@ -42,7 +45,8 @@ include("config.php");
             </li>
 
         </ul>
-
+            </div>
+        </nav>
     </header>
     <main>
    <!--
@@ -61,7 +65,7 @@ include("config.php");
         <ul class="nav nav-pills">
 
             <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">Add task</a>
+                <div class="nav-link dropdown-toggle" data-toggle="dropdown">Add task</div>
                 <div class="dropdown-menu">
                     <a class="dropdown-item" href="create/module_form.html">Module</a>
                     <a class="dropdown-item" href="create/department_form.html">Department</a>

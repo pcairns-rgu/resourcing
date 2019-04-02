@@ -27,57 +27,156 @@ include('config.php');
 <body>
 <div class="container colour">
     <header>
-        <a href="index.php"><h2 class="logo">FORECAST</h2></a>
-        <h1>Module Action List</h1>
-        <p id=""><a href="">Module list</a></p>
-        <p id=""><a href="">Nav to another page</a></p>
+        <nav class="navbar navbar-expand-sm">
+        <div class="row">
+            <a href="index.php"><h2 class="col logo">FORECAST</h2></a>
+            <h2 class="col forecast center">Module actions</h2>
+            <ul class="col nav nav-pills">
 
-    </header>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">My Account</a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="#">My task list</a>
+                        <a class="dropdown-item" href="#">Module</a>
+                        <a class="dropdown-item" href="#">Update password</a>
+                        <a class="dropdown-item" href="log_out.php">Sign out</a>
+                    </div>
+                </li>
+
+            </ul>
+        </div>
+        </nav>
+          </header>
 
     <main>
-        <p>Things to do </p>
-
-
 
         <div class="container mt-3">
-            <!-- Nav tabs -->
+
+
+
+   <!-- Nav tabs -->
             <ul class="nav nav-tabs">
+                <li class="nav-item">Tasks for: </li>
                 <li class="nav-item">
-                    <a class="nav-link active" data-toggle="collapse" href="#home">Home</a>
+                    <a class="nav-link active" data-toggle="collapse" href="#home">All</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" data-toggle="collapse" href="#menu1">Menu 1</a>
+                    <a class="nav-link" data-toggle="collapse" href="#menu1">Person 1</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" data-toggle="collapse" href="#menu2">Menu 2</a>
+                    <a class="nav-link" data-toggle="collapse" href="#menu2">Person 2</a>
                 </li>
             </ul>
 
             <!-- Tab panes -->
             <div class="tab-content">
                 <div id="home" class="collapse" ><br>
-                    <h3>HOME</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                    <table class="module">
+
+                        <tr>
+                            <th>Date</th>
+                            <th>Course</th>
+                            <th>Action</th>
+                            <th>Notes(status)</th>
+                            <th>Deadline</th>
+                            <th>Completed</th>
+                            <th>Delete</th>
+                            <th>Reallocate</th>
+                        </tr>
+                        <tr>
+                            <td>Today</td>
+                            <td>CMM004</td>
+                            <td>Set up page</td>
+                            <td>Started</td>
+                            <td>Now</td>
+                            <td>No</td>
+                            <td>Delete</td>
+                            <td>Reallocate</td>
+
+                        </tr>
+
+                    </table>
                 </div>
                 <div id="menu1" class="collapse"><br>
-                    <h3>Menu 1</h3>
-                    <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                    <table class="module">
+
+                        <tr>
+                            <th>Date</th>
+                            <th>Course</th>
+                            <th>Action</th>
+                            <th>Notes(status)</th>
+                            <th>Deadline</th>
+                            <th>Completed</th>
+                            <th>Delete</th>
+                            <th>Reallocate</th>
+                        </tr>
+                        <tr>
+                            <td>Today</td>
+                            <td>CMM004</td>
+                            <td>Set up page</td>
+                            <td>Started</td>
+                            <td>Now</td>
+                            <td>No</td>
+                            <td>Delete</td>
+                            <td>Reallocate</td>
+
+                        </tr>
+
+                    </table>
                 </div>
                 <div id="menu2" class="collapse"><br>
-                    <h3>Menu 2</h3>
-                    <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
+                    <table class="module">
+
+                        <tr>
+                            <th>Date</th>
+                            <th>Course</th>
+                            <th>Action</th>
+                            <th>Notes(status)</th>
+                            <th>Deadline</th>
+                            <th>Completed</th>
+                            <th>Delete</th>
+                            <th>Reallocate</th>
+                        </tr>
+                        <tr>
+                            <td>Today</td>
+                            <td>CMM004</td>
+                            <td>Set up page</td>
+                            <td>Started</td>
+                            <td>Now</td>
+                            <td>No</td>
+                            <td>Delete</td>
+                            <td>Reallocate</td>
+
+                        </tr>
+
+                    </table>
                 </div>
             </div>
         </div>
 
 
+
         <br><br>
-        <form action="upload.php" method="post" enctype="multipart/form-data">
-            Select file to upload:
-            <input type="file" name="file">
-            <input type="submit" value="Upload" name="submit">
-        </form>
-        <br><br>
+
+        <table class='cabinet'>
+
+            <tr>
+                <th>Add to cabinet</th>
+            </tr>
+            <tr>
+                <th>
+                    <form action="upload.php" method="post" enctype="multipart/form-data">
+                        Select file to upload:
+                        <input type="file" name="file">
+                        <input type="submit" value="Upload" name="submit">
+                    </form>
+
+                </th>
+
+            </tr>
+
+       <tr>
+           <th>
 
         <?php
 
@@ -95,32 +194,10 @@ include('config.php');
             <p>No image(s) found...</p>
         <?php } ?>
 
-
-        <table class="module">
-
-            <tr>
-                <th>Date</th>
-                <th>Course</th>
-                <th>Action</th>
-                <th>Notes(status)</th>
-                <th>Deadline</th>
-                <th>Completed</th>
-                <th>Delete</th>
-                <th>Reallocate</th>
-            </tr>
-            <tr>
-                <td>Today</td>
-                <td>CMM004</td>
-                <td>Set up page</td>
-                <td>Started</td>
-                <td>Now</td>
-                <td>No</td>
-                <td>Delete</td>
-                <td>Reallocate</td>
-
-            </tr>
-
+           </th>
+       </tr>
         </table>
+
         <br><br>
     </main>
     <hr />

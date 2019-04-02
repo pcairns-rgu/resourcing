@@ -1,3 +1,7 @@
+DROP TABLE images;
+
+DROP TABLE teaches_module;
+
 DROP TABLE module_task;
 
 DROP TABLE private;
@@ -92,14 +96,14 @@ INSERT INTO module VALUES ('SCDM004', 'Data Analysis');
 INSERT INTO module VALUES ('SCDM005', 'Website Development');
 INSERT INTO module VALUES ('SCDM006', 'R Programming');
 
-INSERT INTO user ('firstname', 'lastname', 'username', 'pwd') VALUES ('John', 'Rebus', 'jr001', 'edinburgh');
-INSERT INTO user ('firstname', 'lastname', 'username', 'pwd') VALUES ('Jim', 'Taggart', 'jt002', 'glasgow');
-INSERT INTO user ('firstname', 'lastname', 'username', 'pwd') VALUES ('Sherlock', 'Holmes', 'sh003', 'london');
-INSERT INTO user ('firstname', 'lastname', 'username', 'pwd') VALUES ('James', 'Bond', 'jb007', 'international');
-INSERT INTO user ('firstname', 'lastname', 'username', 'pwd') VALUES ('Jessica', 'Fletcher', 'jf004', 'maine');
-INSERT INTO user ('firstname', 'lastname', 'username', 'pwd') VALUES ('Kelly', 'Garrett', 'kg005', 'losangeles');
-INSERT INTO user ('firstname', 'lastname', 'username', 'pwd') VALUES ('Kris', 'Munroe', 'km006', 'bosley');
-INSERT INTO user ('firstname', 'lastname', 'username', 'pwd') VALUES ('Sabrina', 'Duncan', 'sd008', 'charlie');
+INSERT INTO user (`firstname`, `lastname`, `username`, `pwd`) VALUES ('John', 'Rebus', 'jr001', 'edinburgh');
+INSERT INTO user (`firstname`, `lastname`, `username`, `pwd`) VALUES ('Jim', 'Taggart', 'jt002', 'glasgow');
+INSERT INTO user (`firstname`, `lastname`, `username`, `pwd`) VALUES ('Sherlock', 'Holmes', 'sh003', 'london');
+INSERT INTO user (`firstname`, `lastname`, `username`, `pwd`) VALUES ('James', 'Bond', 'jb007', 'international');
+INSERT INTO user (`firstname`, `lastname`, `username`, `pwd`) VALUES ('Jessica', 'Fletcher', 'jf004', 'maine');
+INSERT INTO user (`firstname`, `lastname`, `username`, `pwd`) VALUES ('Kelly', 'Garrett', 'kg005', 'losangeles');
+INSERT INTO user (`firstname`, `lastname`, `username`, `pwd`) VALUES ('Kris', 'Munroe', 'km006', 'bosley');
+INSERT INTO user (`firstname`, `lastname`, `username`, `pwd`) VALUES ('Sabrina', 'Duncan', 'sd008', 'charlie');
 
 INSERT INTO teaches_module VALUES('SCDM001', 1);
 INSERT INTO teaches_module VALUES('SCDM006', 2);
