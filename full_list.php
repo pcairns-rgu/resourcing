@@ -102,7 +102,7 @@ include("config.php");
                 <th>Update</th>
             </tr>
         <?php
-        $sql_query="SELECT * FROM module";
+        $sql_query="SELECT * FROM module_task";
         $result = $db->query($sql_query);
         while($row = $result->fetch_array()) {
             $today = $row['today'];

@@ -9,7 +9,7 @@
 include("../config.php");
 
 
-$sql = "DELETE FROM module WHERE id=1";
+$sql = "DELETE FROM module_task WHERE id=1";
 
 
 if(mysqli_query($db, $sql)){

@@ -40,7 +40,7 @@
 
 <?php
 include("../config.php");
-$sql_query="SELECT * FROM module WHERE id=2";
+$sql_query="SELECT * FROM module_task WHERE id=2";
 
 $result = $db->query($sql_query);
 while($row = $result->fetch_array()) {

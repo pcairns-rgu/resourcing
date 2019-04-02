@@ -12,7 +12,7 @@ $task = $_POST["task"];
 $comments=$_POST["comments"];
 $deadline=$_POST["deadline"];
 
-$sql = "UPDATE module SET module='$module', task='$task', comments='$comments', deadline='$deadline' WHERE id=2";
+$sql = "UPDATE module SET module_task='$module', task='$task', comments='$comments', deadline='$deadline' WHERE id=2";
 
 if(mysqli_query($db, $sql)){
 
