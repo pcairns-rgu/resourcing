@@ -33,7 +33,7 @@ else{
 
     echo "invalid input";
 }
-
+ffff
 */
 $sql = "SELECT id FROM user WHERE username='$username' AND pwd='$pwd'";
 $result = mysqli_query($db, $sql);
