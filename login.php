@@ -16,29 +16,43 @@ if(empty($_POST["username"])|| empty($_POST["pwd"]))
 else{
 
     $username=$_POST["username"];
+
     $pwd=$_POST["pwd"];
 
 }
 
-$sql="SELECT id FROM user WHERE username='$username' AND pwd='$pwd'";
-$result = mysqli_query($db, $sql);
+/*$hashed_password= "SELECT pwd FROM user WHERE username='$username';";
+$result1 = mysqli_query($db, $hashed_password);
 
-if(mysqli_num_rows($result)== 1)
-{
+if(password_verify($pwd, $result1)) {
+echo "valid input";
 
-    $_SESSION["userID"]=$username;
-
-    header("location: home.php");
-    exit();
-
-}else{
-
-    echo "Incorrect username or password";
-     echo "<br>";
-    echo "Please note that access to this website requires authorisation from the head of the school. ";
 }
-echo "<br>";
-echo "If you should have access and have not received login credentials, please contact the school office.";
+
+else{
+
+    echo "invalid input";
+}
+
+*/
+$sql = "SELECT id FROM user WHERE username='$username' AND pwd='$pwd'";
+$result = mysqli_query($db, $sql);
+    if (mysqli_num_rows($result) == 1) {
+
+        $_SESSION["userID"] = $username;
+
+        header("location: home.php");
+        exit();
+
+    } else {
+
+        echo "Incorrect username or password";
+        echo "<br>";
+        echo "Please note that access to this website requires authorisation from the head of the school. ";
+        echo "<br>";
+        echo "If you should have access and have not received login credentials, please contact the school office.";
+    }
+
 exit();
 
 
