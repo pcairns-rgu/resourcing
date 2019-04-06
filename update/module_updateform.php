@@ -43,8 +43,10 @@
 include("../config.php");
 
 
-
-$sql_query="SELECT * FROM module_task WHERE id='jr001'";
+if(isset($_GET['id'])){
+    $id=$_GET['id'];
+}
+$sql_query="SELECT * FROM module_task WHERE id=$id";
 
 $result = $db->query($sql_query);
 while($row = $result->fetch_array()) {

@@ -5,7 +5,14 @@
  * Date: 18/03/2019
  * Time: 14:25
  */
+
+session_start();
+include("../config.php");
+if (!IsSet($_SESSION["userID"]))		//user variable must exist in session to stay here
+    header("Location: login.php");	//if not, go back to login page
+$username=$_SESSION["userID"];		//get user name into variable $username
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -40,9 +47,11 @@
 <?php
 
 
-include("../config.php");
 
 
+if(IsSet($_GET['id'])){
+    $id=$_GET['id'];
+}
 
 
 $sql_query="SELECT * FROM private WHERE id=4";

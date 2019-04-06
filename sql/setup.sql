@@ -105,15 +105,15 @@ INSERT INTO user (`firstname`, `lastname`, `username`, `pwd`) VALUES ('Kelly', '
 INSERT INTO user (`firstname`, `lastname`, `username`, `pwd`) VALUES ('Kris', 'Munroe', 'km006', 'bosley');
 INSERT INTO user (`firstname`, `lastname`, `username`, `pwd`) VALUES ('Sabrina', 'Duncan', 'sd008', 'charlie');
 
-INSERT INTO teaches_module VALUES('SCDM001', 1);
-INSERT INTO teaches_module VALUES('SCDM006', 2);
-INSERT INTO teaches_module VALUES('SCDM002', 3);
-INSERT INTO teaches_module VALUES('SCDM003', 4);
-INSERT INTO teaches_module VALUES('SCDM004', 5);
-INSERT INTO teaches_module VALUES('SCDM005', 6);
-INSERT INTO teaches_module VALUES('SCDM006', 7);
-INSERT INTO teaches_module VALUES('SCDM001', 8);
-INSERT INTO teaches_module VALUES('SCDM002', 6);
-INSERT INTO teaches_module VALUES('SCDM003', 7);
-INSERT INTO teaches_module VALUES('SCDM004', 8);
-INSERT INTO teaches_module VALUES('SCDM005', 5);
+INSERT INTO teaches_module VALUES('SCDM001', 'jr001');
+INSERT INTO teaches_module VALUES('SCDM006', 'jt002');
+INSERT INTO teaches_module VALUES('SCDM002', 'sh003');
+INSERT INTO teaches_module VALUES('SCDM003', 'jb007');
+INSERT INTO teaches_module VALUES('SCDM004','jf004');
+INSERT INTO teaches_module VALUES('SCDM005', 'kg005');
+INSERT INTO teaches_module VALUES('SCDM006', 'km006');
+INSERT INTO teaches_module VALUES('SCDM001', 'sd008');
+INSERT INTO teaches_module VALUES('SCDM002', 'kg005');
+INSERT INTO teaches_module VALUES('SCDM003', 'km006');
+INSERT INTO teaches_module VALUES('SCDM004', 'sd008');
+INSERT INTO teaches_module VALUES('SCDM005','jf004');
