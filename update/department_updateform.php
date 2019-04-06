@@ -5,6 +5,12 @@
  * Date: 18/03/2019
  * Time: 14:25
  */
+session_start();
+include("../config.php");
+if (!IsSet($_SESSION["userID"]))		//user variable must exist in session to stay here
+    header("Location: login.php");	//if not, go back to login page
+$username=$_SESSION["userID"];		//get user name into variable $username
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -38,8 +44,9 @@
 <br>
 
 <?php
-include("../config.php");
-$sql_query="SELECT * FROM department WHERE id='jr001'";
+
+$id=$_POST['id'];
+$sql_query="SELECT * FROM department WHERE id='$id'";
 
 $result = $db->query($sql_query);
 while($row = $result->fetch_array()) {
@@ -48,6 +55,7 @@ while($row = $result->fetch_array()) {
     $comments = $row['comments'];
     $deadline = $row['deadline'];
     $completed=$row['completed'];
+    $id=$row['id'];
     echo "
 <form method='post' action='update_department_task.php'>
     <h1 class='forecast'>Update task</h1>
@@ -60,6 +68,7 @@ while($row = $result->fetch_array()) {
     <label>Completed:      </label>
     <input type='radio' name='completed' value='Yes' />Yes
     <input type='radio' name='completed' value='No' />No
+    <input type='hidden' name='id' value='$id'/>
     <br><br>
     <input type='submit' name='submit' value='Submit' />
 </form>";

@@ -5,6 +5,14 @@
  * Date: 18/03/2019
  * Time: 14:25
  */
+
+session_start();
+include("../config.php");
+
+if (!IsSet($_SESSION["userID"]))		//user variable must exist in session to stay here
+    header("Location: login.php");	//if not, go back to login page
+$username=$_SESSION["userID"];		//get user name into variable $username
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -18,7 +26,6 @@
 
     <link rel="stylesheet"
           href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../assets/css/colours.css">
     <link rel="stylesheet" href="../assets/css/style.css">
     <link rel="stylesheet" href="../assets/css/form.css">
 
@@ -32,19 +39,15 @@
     <main>
         <div class=" d-flex justify-content-center">
 
-
-
-
-
 <br>
 
 <?php
-include("../config.php");
-$sql_query="SELECT * FROM user WHERE id='jr001'";
+
+$sql_query="SELECT * FROM user WHERE username='$username'";
 
 $result = $db->query($sql_query);
 while($row = $result->fetch_array()) {
-    $pwd = $row['pwd'];
+    $pwd = "";
 
     echo "
 <form method='post' action='update_password.php'>

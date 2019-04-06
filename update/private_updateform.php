@@ -46,15 +46,8 @@ $username=$_SESSION["userID"];		//get user name into variable $username
 
 <?php
 
-
-
-
-if(IsSet($_GET['id'])){
-    $id=$_GET['id'];
-}
-
-
-$sql_query="SELECT * FROM private WHERE id=4";
+$id=$_POST['id'];
+$sql_query="SELECT * FROM private WHERE id='$id'";
 
 $result = $db->query($sql_query);
 while($row = $result->fetch_array()) {
@@ -77,6 +70,7 @@ while($row = $result->fetch_array()) {
      <label>Completed</label>
     <input type='radio' name='completed' value='Yes' />Yes
     <input type='radio' name='completed' value='No' />No
+    <input type='hidden' name='id' value='$id'/>
     <br><br>
     <input type='submit' name='submit' value='Submit' />
 </form>";

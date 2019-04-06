@@ -5,6 +5,13 @@
  * Date: 18/03/2019
  * Time: 14:25
  */
+session_start();
+include("../config.php");
+if (!IsSet($_SESSION["userID"]))		//user variable must exist in session to stay here
+    header("Location: login.php");	//if not, go back to login page
+$username=$_SESSION["userID"];		//get user name into variable $username
+
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -18,7 +25,7 @@
 
     <link rel="stylesheet"
           href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../assets/css/colours.css">
+
     <link rel="stylesheet" href="../assets/css/style.css">
     <link rel="stylesheet" href="../assets/css/form.css">
 
@@ -40,13 +47,11 @@
 
 <?php
 
-include("../config.php");
 
 
-if(isset($_GET['id'])){
-    $id=$_GET['id'];
-}
-$sql_query="SELECT * FROM module_task WHERE id=$id";
+
+$id=$_POST['id'];
+$sql_query="SELECT * FROM module_task WHERE id='$id'";
 
 $result = $db->query($sql_query);
 while($row = $result->fetch_array()) {
@@ -54,7 +59,7 @@ while($row = $result->fetch_array()) {
     $task = $row['task'];
     $comments = $row['comments'];
     $deadline = $row['deadline'];
-    $completed= $row['completed'];
+    $completed=$row['completed'];
     $id=$row['id'];
     echo "
 <form method='post' action='update_module_task.php'>
@@ -68,6 +73,7 @@ while($row = $result->fetch_array()) {
     <label>Completed:      </label>
     <input type='radio' name='completed' value='Yes' />Yes
     <input type='radio' name='completed' value='No' />No
+    <input type='hidden' name='id' value='$id'/>
     <br><br>
     <input type='submit' name='submit' value='Submit' />
 </form>";

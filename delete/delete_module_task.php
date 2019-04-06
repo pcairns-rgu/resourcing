@@ -5,11 +5,15 @@
  * Date: 17/03/2019
  * Time: 11:55
  */
-
+session_start();
 include("../config.php");
 
+if (!IsSet($_SESSION["userID"]))		//user variable must exist in session to stay here
+    header("Location: login.php");	//if not, go back to login page
+$username=$_SESSION["userID"];		//get user name into variable $username
 
-$sql = "DELETE FROM module_task WHERE id='jr001'";
+$id=$_POST["id"];
+$sql = "DELETE FROM module_task WHERE id='$id'";
 
 
 if(mysqli_query($db, $sql)){

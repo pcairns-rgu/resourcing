@@ -111,7 +111,7 @@ $username=$_SESSION["userID"];
                 <th>Update</th>
             </tr>
         <?php
-        $sql_query="SELECT * FROM module_task";
+        $sql_query="SELECT * FROM module_task WHERE username='$username'";
         $result = $db->query($sql_query);
         while($row = $result->fetch_array()) {
             $today = $row['today'];
@@ -119,6 +119,8 @@ $username=$_SESSION["userID"];
             $task = $row['task'];
             $comments = $row['comments'];
             $deadline = $row['deadline'];
+            $completed = $row['completed'];
+            $id=$row['id'];
             echo "
             <tr>
             <td>{$today}</td>
@@ -126,10 +128,10 @@ $username=$_SESSION["userID"];
             <td>{$task}</td>
                 <td>{$comments}</td>
                 <td>{$deadline}</td>
-            <td>No</td>
-            <td><a href='delete/delete_module_task.php'>Delete</a></td>
+            <td>{$completed}</td>
+             <td><form action='delete/delete_module_task.php' method='post'><input type='hidden' name='id' value='$id'/> <input type='submit' name='submit' value='Delete' /></form></td>
             <td>Reallocate</td>
-            <td><a href='update/module_updateform.php'>Update</a></td>
+            <td><form action='update/module_updateform.php' method='post'><input type='hidden' name='id' value='$id'/> <input type='submit' name='submit' value='Update' /></form></td>
 
             </tr>
 
@@ -153,7 +155,7 @@ $username=$_SESSION["userID"];
                 <th>Update</th>
             </tr>
         <?php
-$sql_query="SELECT * FROM department";
+$sql_query="SELECT * FROM department  WHERE username='$username'";
 
 $result = $db->query($sql_query);
 while($row = $result->fetch_array()) {
@@ -162,6 +164,7 @@ while($row = $result->fetch_array()) {
     $comments = $row['comments'];
     $deadline = $row['deadline'];
     $completed = $row['completed'];
+    $id=$row['id'];
     echo "
        
             <tr>
@@ -170,9 +173,9 @@ while($row = $result->fetch_array()) {
                 <td>{$comments}</td>
                 <td>{$deadline}</td>
                 <td>{$completed}</td>
-                <td><a href='delete/delete_department_task.php'>Delete<a></a></td>
+                <td><form action='delete/delete_department_task.php' method='post'><input type='hidden' name='id' value='$id'/> <input type='submit' name='submit' value='Delete' /></form></td>
                 <td>Reallocate</td>
-                <td><a href='update/department_updateform.php'>Update</a></td>
+                <td><form action='update/department_updateform.php' method='post'><input type='hidden' name='id' value='$id'/> <input type='submit' name='submit' value='Update' /></form></td>
             </tr>
 
        ";
@@ -213,10 +216,9 @@ while($row = $result->fetch_array()) {
                 <td>{$comments}</td>
                 <td>{$deadline}</td>
                 <td>{$completed}</td>
-                <td><a href='delete/delete_private_task.php'>Delete</a></td>
-                <td><a href='update/private_updateform.php'>Update</a></td>
-
-
+                <td><form action='delete/delete_private_task.php' method='post'><input type='hidden' name='id' value='$id'/> <input type='submit' name='submit' value='Delete' /></form></td>
+                <td><form action='update/private_updateform.php' method='post'><input type='hidden' name='id' value='$id'/> <input type='submit' name='submit' value='Update' /></form></td>
+                
             </tr>
 
     ";

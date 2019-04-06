@@ -11,12 +11,15 @@ include("../config.php");
 if (!IsSet($_SESSION["userID"]))		//user variable must exist in session to stay here
     header("Location: login.php");	//if not, go back to login page
 $username=$_SESSION["userID"];		//get user name into variable $username
+
 $code = $_POST["code"];
 $task = $_POST["task"];
 $comments=$_POST["comments"];
 $deadline=$_POST["deadline"];
+$completed=$_POST["completed"];
+$id=$_POST["id"];
 
-$sql = "INSERT INTO module_task (today, code, task, comments, deadline, user_id) VALUES (curdate(),'$code','$task','$comments','$deadline', '$username')";
+$sql = "INSERT INTO module_task (today, code, task, comments, deadline, completed, username) VALUES (curdate(),'$code','$task','$comments','$deadline', '$completed','$username')";
 
 if(mysqli_query($db, $sql)){
 
