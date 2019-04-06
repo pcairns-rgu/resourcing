@@ -12,17 +12,15 @@ DROP TABLE module;
 
 DROP TABLE user;
 
-CREATE TABLE user(
-                   id int(7) NOT NULL AUTO_INCREMENT,
+CREATE TABLE `user`(
+                   username varchar(20) NOT NULL,
                    firstname varchar(50) NOT NULL,
                    lastname varchar(50)NOT NULL,
-                   username varchar(50) NOT NULL,
                    pwd varchar(255) NOT NULL,
-                   PRIMARY KEY(id)
+                   PRIMARY KEY(username)
 );
 
 CREATE TABLE module(
-
                      code char(7) NOT NULL,
                      name varchar(50)NOT NULL,
                      PRIMARY KEY(code)
@@ -35,9 +33,9 @@ CREATE TABLE department(
                          comments varchar(250),
                          deadline date,
                          completed char(3),
-                         user_id int,
+                         username varchar(20),
                          PRIMARY KEY(id),
-                         CONSTRAINT FK_department FOREIGN KEY (user_id) REFERENCES user(id)
+                         CONSTRAINT FK_department FOREIGN KEY (username) REFERENCES user(username) ON UPDATE CASCADE
 );
 
 
@@ -50,10 +48,10 @@ CREATE TABLE module_task
   comments  varchar(250),
   deadline  date,
   completed char(3),
-  user_id   int,
+  username varchar(20),
   PRIMARY KEY (id),
-  CONSTRAINT FK_module_task_user FOREIGN KEY (user_id) REFERENCES user(id),
-  CONSTRAINT FK_module_task_module FOREIGN KEY (code) REFERENCES module(code)
+  CONSTRAINT FK_module_task_user FOREIGN KEY (username) REFERENCES user(username) ON UPDATE CASCADE,
+  CONSTRAINT FK_module_task_module FOREIGN KEY (code) REFERENCES module(code) ON UPDATE CASCADE
 );
 
 CREATE TABLE private
@@ -64,9 +62,9 @@ CREATE TABLE private
   comments  varchar(250),
   deadline  date,
   completed char(3),
-  user_id   int,
+  username  varchar(20),
   PRIMARY KEY (id),
-  CONSTRAINT FK_private FOREIGN KEY (user_id) REFERENCES user (id) ON DELETE CASCADE ON UPDATE CASCADE
+  CONSTRAINT FK_private FOREIGN KEY (username) REFERENCES user(username) ON DELETE CASCADE ON UPDATE CASCADE
 )
 ;
 
@@ -81,9 +79,9 @@ CREATE TABLE images(
 
 CREATE TABLE teaches_module(
                              mod_code char(7),
-                             user_id int(7),
-                             PRIMARY KEY(mod_code, user_id),
-                             CONSTRAINT FK_teaches_module_user FOREIGN KEY(user_id) REFERENCES user(id) ON UPDATE CASCADE,
+                             username varchar(20),
+                             PRIMARY KEY(mod_code, username),
+                             CONSTRAINT FK_teaches_module_user FOREIGN KEY(username) REFERENCES user(username) ON UPDATE CASCADE,
                              CONSTRAINT FK_teaches_module_module FOREIGN KEY(mod_code) REFERENCES module(code) ON UPDATE CASCADE
 
 

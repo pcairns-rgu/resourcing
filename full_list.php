@@ -7,6 +7,11 @@
 */
 session_start();
 include("config.php");
+if (!IsSet($_SESSION["userID"]))		//user variable must exist in session to stay here
+    header("Location: login.php");	//if not, go back to login page
+$username=$_SESSION["userID"];
+
+//get user name into variable $username
 ?>
 
 <!DOCTYPE html>
@@ -18,7 +23,7 @@ include("config.php");
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <link rel="stylesheet"
           href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-    <title>My Action List</title>
+    <title>Action List</title>
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/table.css">
 
@@ -110,14 +115,14 @@ include("config.php");
         $result = $db->query($sql_query);
         while($row = $result->fetch_array()) {
             $today = $row['today'];
-            $module = $row['module'];
+            $code = $row['code'];
             $task = $row['task'];
             $comments = $row['comments'];
             $deadline = $row['deadline'];
             echo "
             <tr>
             <td>{$today}</td>
-            <td>{$module}</td>
+            <td>{$code}</td>
             <td>{$task}</td>
                 <td>{$comments}</td>
                 <td>{$deadline}</td>
@@ -192,7 +197,7 @@ while($row = $result->fetch_array()) {
 
             <?php
 
-      $sql_query="SELECT * FROM private";
+      $sql_query="SELECT * FROM private WHERE username='$username'";
         $result = $db->query($sql_query);
         while($row = $result->fetch_array()) {
             $today = $row['today'];
@@ -200,6 +205,7 @@ while($row = $result->fetch_array()) {
             $comments = $row['comments'];
             $deadline = $row['deadline'];
             $completed = $row['completed'];
+            $id=$row['id'];
             echo "
             <tr>
                 <td>{$today}</td>

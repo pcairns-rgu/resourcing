@@ -38,8 +38,14 @@
 <br>
 
 <?php
+
+
 include("../config.php");
-$sql_query="SELECT * FROM private WHERE id=1";
+
+
+
+
+$sql_query="SELECT * FROM private WHERE id=4";
 
 $result = $db->query($sql_query);
 while($row = $result->fetch_array()) {
@@ -48,6 +54,8 @@ while($row = $result->fetch_array()) {
     $comments = $row['comments'];
     $deadline = $row['deadline'];
     $completed=$row['completed'];
+    $id= $row['id'];
+
     echo "
 <form method='post' action='update_private_task.php'>
     <h1 class='forecast'>Update task </h1>

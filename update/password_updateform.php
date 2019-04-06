@@ -40,7 +40,7 @@
 
 <?php
 include("../config.php");
-$sql_query="SELECT * FROM user WHERE id=2";
+$sql_query="SELECT * FROM user WHERE id='jr001'";
 
 $result = $db->query($sql_query);
 while($row = $result->fetch_array()) {

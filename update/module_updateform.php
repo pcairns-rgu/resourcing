@@ -39,8 +39,12 @@
 <br>
 
 <?php
+
 include("../config.php");
-$sql_query="SELECT * FROM module_task WHERE id=2";
+
+
+
+$sql_query="SELECT * FROM module_task WHERE id='jr001'";
 
 $result = $db->query($sql_query);
 while($row = $result->fetch_array()) {
@@ -49,6 +53,7 @@ while($row = $result->fetch_array()) {
     $comments = $row['comments'];
     $deadline = $row['deadline'];
     $completed= $row['completed'];
+    $id=$row['id'];
     echo "
 <form method='post' action='update_module_task.php'>
    <h1 class='forecast'>Update task</h1>

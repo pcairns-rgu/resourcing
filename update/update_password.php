@@ -9,7 +9,7 @@ include('../config.php');
 
 $pwd1=password_hash('pwd', PASSWORD_DEFAULT);
 
-$sql = "UPDATE user SET pwd='$pwd1' WHERE id=5";
+$sql = "UPDATE user SET pwd='$pwd1' WHERE id='jr001'";
 
 if(mysqli_query($db, $sql)){
 

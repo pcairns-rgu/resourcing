@@ -5,13 +5,19 @@
  * Date: 17/03/2019
  * Time: 11:55
  */
-
+session_start();
 include("../config.php");
+if (!IsSet($_SESSION["userID"]))		//user variable must exist in session to stay here
+    header("Location: login.php");	//if not, go back to login page
+$username=$_SESSION["userID"];		//get user name into variable $username
+
+
 $task = $_POST["task"];
 $comments=$_POST["comments"];
 $deadline=$_POST["deadline"];
 
-$sql = "INSERT INTO private (today, task, comments, deadline) VALUES (curdate(),'$task','$comments','$deadline')";
+
+$sql = "INSERT INTO private (today, task, comments, deadline, username ) VALUES (curdate(),'$task','$comments','$deadline', '$username')";
 
 if(mysqli_query($db, $sql)){
 

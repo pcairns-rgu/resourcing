@@ -9,7 +9,7 @@
 include("../config.php");
 
 
-$sql = "DELETE FROM department WHERE id=1";
+$sql = "DELETE FROM department WHERE id='jr001'";
 
 
 if(mysqli_query($db, $sql)){
