@@ -63,10 +63,10 @@ $username=$_SESSION["userID"];		//get user name into variable $username
                     <a class="nav-link active" data-toggle="collapse" href="#home">All</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" data-toggle="collapse" href="#menu1">Person 1</a>
+                    <a class="nav-link" data-toggle="collapse" href="#menu1">My tasks</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" data-toggle="collapse" href="#menu2">Person 2</a>
+                    <a class="nav-link" data-toggle="collapse" href="#menu2">Other tasks</a>
                 </li>
             </ul>
 
@@ -85,18 +85,33 @@ $username=$_SESSION["userID"];		//get user name into variable $username
                             <th>Delete</th>
                             <th>Reallocate</th>
                         </tr>
+                        <?php
+                        $sql_query="SELECT * FROM module_task,user WHERE module_task.username= user.username";
+                        $result = $db->query($sql_query);
+                        while($row = $result->fetch_array()) {
+                        $today = $row['today'];
+                        $code = $row['code'];
+                        $task = $row['task'];
+                        $comments = $row['comments'];
+                        $deadline = $row['deadline'];
+                        $completed = $row['completed'];
+                        $id=$row['id'];
+                        $firstname=$row['firstname'];
+                        $lastname=$row['lastname'];
+                        echo "
                         <tr>
-                            <td>Today</td>
-                            <td>CMM004</td>
-                            <td>Set up page</td>
-                            <td>Started</td>
-                            <td>Now</td>
-                            <td>No</td>
-                            <td>Delete</td>
-                            <td>Reallocate</td>
-
+                            <td>{$firstname} {$lastname}</td>
+                            <td>{$today}</td>
+                            <td>{$code}</td>
+                            <td>{$task}</td>
+                            <td>{$comments}</td>
+                            <td>{$deadline}</td>
+                            <td>{$completed}</td>
                         </tr>
 
+                        ";
+                        }
+?>
                     </table>
                 </div>
                 <div id="menu1" class="collapse"><br>
@@ -112,18 +127,33 @@ $username=$_SESSION["userID"];		//get user name into variable $username
                             <th>Delete</th>
                             <th>Reallocate</th>
                         </tr>
+                        <?php
+                        $sql_query="SELECT * FROM module_task,user WHERE module_task.username= user.username AND user.username='$username'";
+                        $result = $db->query($sql_query);
+                        while($row = $result->fetch_array()) {
+                            $today = $row['today'];
+                            $code = $row['code'];
+                            $task = $row['task'];
+                            $comments = $row['comments'];
+                            $deadline = $row['deadline'];
+                            $completed = $row['completed'];
+                            $id=$row['id'];
+                            $firstname=$row['firstname'];
+                            $lastname=$row['lastname'];
+                            echo "
                         <tr>
-                            <td>Today</td>
-                            <td>CMM004</td>
-                            <td>Set up page</td>
-                            <td>Started</td>
-                            <td>Now</td>
-                            <td>No</td>
-                            <td>Delete</td>
-                            <td>Reallocate</td>
-
+                          <td>{$lastname}</td>
+                            <td>{$today}</td>
+                            <td>{$code}</td>
+                            <td>{$task}</td>
+                            <td>{$comments}</td>
+                            <td>{$deadline}</td>
+                            <td>{$completed}</td>
                         </tr>
 
+                        ";
+                        }
+                        ?>
                     </table>
                 </div>
                 <div id="menu2" class="collapse"><br>
@@ -140,17 +170,33 @@ $username=$_SESSION["userID"];		//get user name into variable $username
                             <th>Reallocate</th>
                         </tr>
                         <tr>
-                            <td>Today</td>
-                            <td>CMM004</td>
-                            <td>Set up page</td>
-                            <td>Started</td>
-                            <td>Now</td>
-                            <td>No</td>
-                            <td>Delete</td>
-                            <td>Reallocate</td>
-
+                            <?php
+                            $sql_query="SELECT * FROM module_task,user WHERE module_task.username= user.username AND user.username!='$username'";
+                            $result = $db->query($sql_query);
+                            while($row = $result->fetch_array()) {
+                                $today = $row['today'];
+                                $code = $row['code'];
+                                $task = $row['task'];
+                                $comments = $row['comments'];
+                                $deadline = $row['deadline'];
+                                $completed = $row['completed'];
+                                $id=$row['id'];
+                                $firstname=$row['firstname'];
+                                $lastname=$row['lastname'];
+                                echo "
+                        <tr>
+                          <td>{$lastname}</td>
+                            <td>{$today}</td>
+                            <td>{$code}</td>
+                            <td>{$task}</td>
+                            <td>{$comments}</td>
+                            <td>{$deadline}</td>
+                            <td>{$completed}</td>
                         </tr>
 
+                        ";
+                            }
+                            ?>
                     </table>
                 </div>
             </div>

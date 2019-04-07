@@ -58,7 +58,7 @@ $username=$_SESSION["userID"];		//get user name into variable $username
         <?php
         echo $username;
         echo "<br>";
-        echo strcmp($username,"jr001");
+        echo strcmp($username,"jf004");
 
                ?>
         <div class="dropdown">
@@ -75,10 +75,8 @@ $username=$_SESSION["userID"];		//get user name into variable $username
                     $lastname = $row['lastname'];
 
                     echo "<a class='dropdown-item' href='#'>{$firstname} {$lastname}</a>";
-            
-
        };
-                echo "<a class='dropdown-item' href='#'>All</a>";
+                echo "<a class='dropdown-item' href='#' >All</a>";
               ?>
             </div>
         </div>
