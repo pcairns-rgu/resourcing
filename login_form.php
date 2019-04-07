@@ -29,7 +29,6 @@
           <input type="text" name="username" placeholder="username" required/><br><br>
           <label>Password: </label><br>
           <input type="password" name="pwd" placeholder="password" required/><br><br>
-
           <input type="submit" name="submit" value="Log-in" />
       </form>
       <div class="error"><?php //echo $error?><?php // echo $username; echo $user_password ?>

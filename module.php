@@ -7,6 +7,9 @@
 */
 session_start();
 include('config.php');
+if (!IsSet($_SESSION["userID"]))		//user variable must exist in session to stay here
+    header("Location: login.php");	//if not, go back to login page
+$username=$_SESSION["userID"];		//get user name into variable $username
 ?>
 
 <!DOCTYPE html>
@@ -35,9 +38,9 @@ include('config.php');
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">My Account</a>
                     <div class="dropdown-menu">
-                        <a class="dropdown-item" href="#">My task list</a>
-                        <a class="dropdown-item" href="#">Module</a>
-                        <a class="dropdown-item" href="#">Update password</a>
+                        <a class="dropdown-item" href="full_list.php">My task list</a>
+                        <a class="dropdown-item" href="overview_list.php">Overview</a>
+                        <a class="dropdown-item" href="./update/password_updateform.php">Update password</a>
                         <a class="dropdown-item" href="log_out.php">Sign out</a>
                     </div>
                 </li>

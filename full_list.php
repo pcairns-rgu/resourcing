@@ -9,9 +9,12 @@ session_start();
 include("config.php");
 if (!IsSet($_SESSION["userID"]))		//user variable must exist in session to stay here
     header("Location: login.php");	//if not, go back to login page
-$username=$_SESSION["userID"];
+$username=$_SESSION["userID"];  //get user name into variable $username
 
-//get user name into variable $username
+$sql_name="SELECT firstname FROM user WHERE username='$username'";
+$result = $db->query($sql_name);
+while($row = $result->fetch_array()) {
+$firstname = $row['firstname'];}
 ?>
 
 <!DOCTYPE html>
@@ -29,21 +32,22 @@ $username=$_SESSION["userID"];
 
 </head>
 <!--- Main body --->
+
+
 <body>
 <div class="container colour">
     <header>
 
-        <nav class="navbar navbar-expand-sm">
+        <nav class="navbar navbar-expand-sm nav-fill w-100 ">
             <div class="row">
-        <a href="index.php"><h2 class="col logo">FORECAST</h2></a>
-        <h2 class="col forecast center">My Action List</h2>
-        <ul class="col nav nav-pills">
-
+        <a href="index.php"><h2 class="col-sm-4 logo">FORECAST</h2></a>
+        <h2 class="col-sm-4 forecast"><?php echo $firstname .'\'s'?> Action List</h2>
+        <ul class="col-sm-4 nav nav-pills">
             <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">My Account</a>
+                <div class="nav-link dropdown-toggle" data-toggle="dropdown">My Account</div>
                 <div class="dropdown-menu">
-                    <a class="dropdown-item" href="#">Overview</a>
-                    <a class="dropdown-item" href="#">Module</a>
+                    <a class="dropdown-item" href="overview_list.php">Overview</a>
+                    <a class="dropdown-item" href="module.php">Module</a>
                     <a class="dropdown-item" href="./update/password_updateform.php">Update password</a>
                     <a class="dropdown-item" href="log_out.php">Sign out</a>
                 </div>

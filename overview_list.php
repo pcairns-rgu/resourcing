@@ -7,6 +7,9 @@
 */
 session_start();
 include("config.php");
+if (!IsSet($_SESSION["userID"]))		//user variable must exist in session to stay here
+    header("Location: login.php");	//if not, go back to login page
+$username=$_SESSION["userID"];		//get user name into variable $username
 ?>
 
 <!DOCTYPE html>
@@ -31,15 +34,15 @@ include("config.php");
         <nav class="navbar navbar-expand-sm">
             <div class="row">
                 <a href="index.php"><h2 class="col logo">FORECAST</h2></a>
-                <h2 class="col forecast center">Actions overview</h2>
+                <h2 class="col forecast center">Overview</h2>
                 <ul class="col nav nav-pills">
 
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">My Account</a>
                         <div class="dropdown-menu">
-                            <a class="dropdown-item" href="#">My task list</a>
-                            <a class="dropdown-item" href="#">Module</a>
-                            <a class="dropdown-item" href="#">Update password</a>
+                            <a class="dropdown-item" href="full_list.php">My task list</a>
+                            <a class="dropdown-item" href="module.php">Module</a>
+                            <a class="dropdown-item" href="./update/password_updateform.php">Update password</a>
                             <a class="dropdown-item" href="log_out.php">Sign out</a>
                         </div>
                     </li>
@@ -52,6 +55,12 @@ include("config.php");
     </header>
     <main>
 
+        <?php
+        echo $username;
+        echo "<br>";
+        echo strcmp($username,"jr001");
+
+               ?>
         <div class="dropdown">
             <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
                Select staff member
@@ -79,27 +88,42 @@ include("config.php");
         <table class="module">
 
                 <tr>
+                    <th>Name</th>
                     <th>Date</th>
                     <th>Course</th>
                     <th>Action</th>
                     <th>Notes(status)</th>
                     <th>Deadline</th>
                     <th>Completed</th>
-                    <th>Delete</th>
                     <th>Reallocate</th>
                 </tr>
-                <tr>
-                    <td>Today</td>
-                    <td>CMM004</td>
-                    <td>Set up page</td>
-                    <td>Started</td>
-                    <td>Now</td>
-                    <td>No</td>
-                    <td>Delete</td>
-                    <td>Reallocate</td>
+            <?php
+            $sql_query="SELECT * FROM module_task,user WHERE module_task.username= user.username";
+            $result = $db->query($sql_query);
+            while($row = $result->fetch_array()) {
+            $today = $row['today'];
+            $code = $row['code'];
+            $task = $row['task'];
+            $comments = $row['comments'];
+            $deadline = $row['deadline'];
+            $completed = $row['completed'];
+            $id=$row['id'];
+            $firstname=$row['firstname'];
+            $lastname=$row['lastname'];
+            echo "
+            <tr>
+            <td>{$firstname} {$lastname}</td>
+                <td>{$today}</td>
+                <td>{$code}</td>
+                <td>{$task}</td>
+                <td>{$comments}</td>
+                <td>{$deadline}</td>
+                <td>{$completed}</td>
+            </tr>
 
-                </tr>
-
+            ";
+            }
+?>
             </table>
 
 
@@ -108,30 +132,49 @@ include("config.php");
             <h3>Department</h3>
 <button type="button" data-toggle="collapse" data-target="#demo">Show all tasks</button>
 <br><br>
-<div id="demo" class="collapse">
-
-
+<div id="demo" class="collapse" >
 <table class="department">
 
                 <tr>
+                    <th>Name</th>
                     <th>Date</th>
                     <th>Action</th>
                     <th>Notes(status)</th>
                     <th>Deadline</th>
                     <th>Completed</th>
-                    <th>Delete</th>
                     <th>Reallocate</th>
-                </tr>
-                <tr>
-                    <td>Today</td>
-                    <td>Set up page</td>
-                    <td>Started</td>
-                    <td>Now</td>
-                    <td>No</td>
-                    <td>Delete</td>
-                    <td>Reallocate</td>
+                                    </tr>
+    <?php
+    $sql_query="SELECT * FROM department, user WHERE department.username= user.username";
 
-                </tr>
+    $result = $db->query($sql_query);
+    while($row = $result->fetch_array()) {
+    $today = $row['today'];
+    $task = $row['task'];
+    $comments = $row['comments'];
+    $deadline = $row['deadline'];
+    $completed = $row['completed'];
+    $id=$row['id'];
+    $firstname=$row['firstname'];
+    $lastname=$row['lastname'];
+
+
+        echo "
+
+
+    <tr>
+    <td>{$firstname} {$lastname}</td>
+        <td>{$today}</td>
+        <td>{$task}</td>
+        <td>{$comments}</td>S
+        <td>{$deadline}</td>
+        <td>{$completed}</td>
+       
+    </tr>
+
+    ";
+    }
+    ?>
 
             </table>
 
