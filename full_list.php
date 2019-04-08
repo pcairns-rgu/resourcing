@@ -3,20 +3,26 @@
 * Created by PhpStorm.
 * User: Pauline
 * Date: 16/03/2019
-* Time: 09:28
+* Purpose: Web page which provides details of all tasks relating to the user
 */
+
+//Initialise code to create a session and link to the database
 session_start();
+
 include("config.php");
+
 if (!IsSet($_SESSION["userID"]))		//user variable must exist in session to stay here
     header("Location: login.php");	//if not, go back to login page
 $username=$_SESSION["userID"];  //get user name into variable $username
 
+//sql to obtain user's firstname from database. Firstname name form part of header of page
 $sql_name="SELECT firstname FROM user WHERE username='$username'";
 $result = $db->query($sql_name);
 while($row = $result->fetch_array()) {
 $firstname = $row['firstname'];}
 ?>
 
+<!-- Start of webpage details -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -29,49 +35,45 @@ $firstname = $row['firstname'];}
     <title>Action List</title>
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/table.css">
+    <link rel="stylesheet" href="assets/css/colours.css">
 
 </head>
+
 <!--- Main body --->
-
-
 <body>
-<div class="container colour">
-    <header>
 
-        <nav class="navbar navbar-expand-sm nav-fill w-100 ">
-            <div class="row">
-        <a href="index.php"><h2 class="col-sm-4 logo">FORECAST</h2></a>
-        <h2 class="col-sm-4 forecast"><?php echo $firstname .'\'s'?> Action List</h2>
-        <ul class="col-sm-4 nav nav-pills">
+  <div class="container colour">
+
+<!--Start of header -->
+  <header>
+    <nav class="navbar navbar-expand-sm nav-fill w-100 ">
+
+       <div class="row">
+
+         <a href="index.php"><h2 class="col-sm-4 logo">FORECAST</h2></a>
+         <h2 class="col-sm-4 forecast"><?php echo $firstname .'\'s'?> Action List</h2>
+         <ul class="col-sm-4 nav nav-pills">
+
             <li class="nav-item dropdown">
-                <div class="nav-link dropdown-toggle" data-toggle="dropdown">My Account</div>
+              <div class="nav-link dropdown-toggle connect" data-toggle="dropdown">My Account</div>
                 <div class="dropdown-menu">
-                    <a class="dropdown-item" href="overview_list.php">Overview</a>
-                    <a class="dropdown-item" href="module.php">Module</a>
-                    <a class="dropdown-item" href="./update/password_updateform.php">Update password</a>
-                    <a class="dropdown-item" href="log_out.php">Sign out</a>
+                  <a class="dropdown-item" href="overview_list.php">Overview</a>
+                  <a class="dropdown-item" href="module.php">Module</a>
+                  <a class="dropdown-item" href="./update/password_updateform.php">Update password</a>
+                  <a class="dropdown-item" href="log_out.php">Sign out</a>
                 </div>
             </li>
 
-        </ul>
-            </div>
-        </nav>
-    </header>
-    <main>
-   <!--
-        <div class="dropdown">
-            <button type="button" class="btn btn-primary ">Add task
+         </ul>
 
-            </button>
-            <div >
-                <a href="create/module_form.html">Module</a>
-                <a href="create/department_form.html">Department</a>
-                <a href="create/private_form.html">Private</a>
-            </div>
-        </div>
-        -->
+       </div>
+    </nav>
+  </header>
+<!-- End of header -->
 
-        <ul class="nav nav-pills">
+<!-- Start of main -->
+  <main>
+           <ul class="nav nav-pills">
 
             <li class="nav-item dropdown">
                 <div class="nav-link dropdown-toggle" data-toggle="dropdown">Add task</div>
@@ -83,19 +85,6 @@ $firstname = $row['firstname'];}
             </li>
 
         </ul>
-
-        <!--
-        <div class="dropdown">
-            <button type="button" class="btn dropdown-toggle" data-toggle="dropdown">
-                Dropdown button
-            </button>
-            <div class="dropdown-menu">
-                <a class="dropdown-item" href="create/module_form.html">Module</a>
-                <a class="dropdown-item" href="create/department_form.html">Department</a>
-                <a class="dropdown-item" href="create/private_form.html">Private</a>
-            </div>
-        </div>
-  -->
 
         <br>
 
@@ -232,19 +221,25 @@ while($row = $result->fetch_array()) {
 
 
     </main>
-    <!-- Start of footer -->
+<!-- End of main -->
 
+<!-- Start of footer -->
     <?php
     include("footer.html");
-
     ?>
-    <!-- End of footer -->
+<!-- End of footer -->
+
+<!-- End of <div class="container colour">-->
 </div>
 <!-- Go to www.addthis.com/dashboard to customize your tools -->
 <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5c853fcb8b82e462"></script>
 
+<!-- Required for drop down lists -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+
+<!-- Bootstrap script for general CSS layout-->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
 </body>
 </html>

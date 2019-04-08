@@ -54,8 +54,6 @@ $username=$_SESSION["userID"];		//get user name into variable $username
 
         <div class="container mt-3">
 
-
-
    <!-- Nav tabs -->
             <ul class="nav nav-tabs">
                 <li class="nav-item">Tasks for: </li>

@@ -19,18 +19,18 @@ if(!IsSet($_SESSION["userID"]))
 
     <link rel="stylesheet"
           href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/css/homepage.css">
-    <link rel="stylesheet" href="assets/css/colours.css">
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/homepage.css">
+    <link rel="stylesheet" href="../assets/css/colours.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
 
 </head>
 <body>
  <h1>Hello</h1>
 
-<p><a href="full_list.php">My action list</a></p>
-<p><a href="module.php">Module list</a></p>
-<p><a href="overview_list.php">Overview</a></p>
- <p><a href="log_out.php">Sign out</a></p>
+<p><a href="../full_list.php">My action list</a></p>
+<p><a href="../module.php">Module list</a></p>
+<p><a href="../overview_list.php">Overview</a></p>
+ <p><a href="../log_out.php">Sign out</a></p>
 
 </body>
 </html>

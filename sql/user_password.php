@@ -16,14 +16,14 @@ $pwd6=password_hash('losangeles', PASSWORD_DEFAULT);
 $pwd7=password_hash('bosley', PASSWORD_DEFAULT);
 $pwd8=password_hash('charlie', PASSWORD_DEFAULT);
 
-$sql  = "UPDATE user SET pwd='$pwd1' WHERE id='jr001';";
-$sql .= "UPDATE user SET pwd='$pwd2' WHERE id='jt002';";
-$sql .= "UPDATE user SET pwd='$pwd3' WHERE id='sh003';";
-$sql .= "UPDATE user SET pwd='$pwd4' WHERE id='jb007';";
-$sql .= "UPDATE user SET pwd='$pwd5' WHERE id='jf004';";
-$sql .= "UPDATE user SET pwd='$pwd6' WHERE id='kg005';";
-$sql .= "UPDATE user SET pwd='$pwd7' WHERE id='km006';";
-$sql .= "UPDATE user SET pwd='$pwd8' WHERE id='sd008';";
+$sql  = "UPDATE user SET pwd='$pwd1' WHERE username='jr001';";
+$sql .= "UPDATE user SET pwd='$pwd2' WHERE username='jt002';";
+$sql .= "UPDATE user SET pwd='$pwd3' WHERE username='sh003';";
+$sql .= "UPDATE user SET pwd='$pwd4' WHERE username='jb007';";
+$sql .= "UPDATE user SET pwd='$pwd5' WHERE username='jf004';";
+$sql .= "UPDATE user SET pwd='$pwd6' WHERE username='kg005';";
+$sql .= "UPDATE user SET pwd='$pwd7' WHERE username='km006';";
+$sql .= "UPDATE user SET pwd='$pwd8' WHERE username='sd008';";
 
 if($db->multi_query($sql) === TRUE){
 

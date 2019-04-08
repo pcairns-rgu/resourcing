@@ -1,9 +1,9 @@
 <?php
 /**
  * Created by PhpStorm.
- * User: Pauline
+ * User: Pauline Cairns
  * Date: 11/03/2019
- * Time: 18:59
+ * Purpose: set up connection to the database
  */
 
 define('DB_SERVER', 'localhost');
@@ -12,13 +12,8 @@ define('DB_PASSWORD', 'root');
 define('DB_DATABASE', 'resourcing');
 $db= mysqli_connect(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_DATABASE);
 
-/*if (!function_exists('mysqli_init') && !extension_loaded('mysqli')) {
-    echo 'We don\'t have mysqli!!!';
-} else {
-    echo 'Phew we have it!';
-}
 
-// Check connection
+/* Check connection - used only for testing when setting up configuration with the database
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
