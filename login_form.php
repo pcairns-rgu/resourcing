@@ -1,3 +1,12 @@
+<?php
+/**
+ * Created by PhpStorm.
+ * User: Pauline
+ * Date: 11/03/2019
+ * Purpose: Webpage for inputting username and password to login into system
+ */
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,13 +24,16 @@
     <link rel="stylesheet" href="assets/css/form.css">
 
 </head>
-<body>
-<div class="container colour">
-<header>
-    <a href="index.php"><h2 class="logo">FORECAST</h2></a>
-</header>
- <div class=" d-flex justify-content-center">
 
+<body>
+  <div class="container colour">
+
+  <header>
+    <a href="index.php"><h2 class="logo">FORECAST</h2></a>
+  </header>
+
+  <main>
+    <div class=" d-flex justify-content-center">
 
       <form method="post" action="login.php">
           <h1 class="forecast drop">Log-in</h1>
@@ -31,18 +43,18 @@
           <input type="password" name="pwd" placeholder="password" required/><br><br>
           <input type="submit" name="submit" value="Log-in" />
       </form>
-      <div class="error"><?php //echo $error?><?php // echo $username; echo $user_password ?>
 
+    </div>
+  </main>
 
-      </div>
+<!-- start of footer -->
+  <?php
+    include("footer.html");
+  ?>
+<!-- end of footer -->
 
+<!-- End of <div class="container colour">-->
   </div>
-
-
-<?php
-include("footer.html");
-?>
-</div>
 
 <!--  www.addthis.com/dashboard script for connect tools -->
 <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5c853fcb8b82e462"></script>
@@ -51,10 +63,3 @@ include("footer.html");
 
 </body>
 </html>
-<?php
-/**
- * Created by PhpStorm.
- * User: Pauline
- * Date: 11/03/2019
- * Time: 19:17
- */

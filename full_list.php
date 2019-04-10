@@ -100,7 +100,6 @@ $firstname = $row['firstname'];}
                 <th>Deadline</th>
                 <th>Completed</th>
                 <th>Delete</th>
-                <th>Reallocate</th>
                 <th>Update</th>
             </tr>
         <?php
@@ -122,8 +121,7 @@ $firstname = $row['firstname'];}
                 <td>{$comments}</td>
                 <td>{$deadline}</td>
             <td>{$completed}</td>
-             <td><form action='delete/delete_module_task.php' method='post'><input type='hidden' name='id' value='$id'/> <input type='submit' name='submit' value='Delete' /></form></td>
-            <td>Reallocate</td>
+            <td><form action='delete/delete_module_task.php' method='post'><input type='hidden' name='id' value='$id'/> <input type='submit' name='submit' value='Delete' /></form></td>
             <td><form action='update/module_updateform.php' method='post'><input type='hidden' name='id' value='$id'/> <input type='submit' name='submit' value='Update' /></form></td>
 
             </tr>
@@ -144,7 +142,6 @@ $firstname = $row['firstname'];}
                 <th>Deadline</th>
                 <th>Completed</th>
                 <th>Delete</th>
-                <th>Reallocate</th>
                 <th>Update</th>
             </tr>
         <?php
@@ -167,7 +164,6 @@ while($row = $result->fetch_array()) {
                 <td>{$deadline}</td>
                 <td>{$completed}</td>
                 <td><form action='delete/delete_department_task.php' method='post'><input type='hidden' name='id' value='$id'/> <input type='submit' name='submit' value='Delete' /></form></td>
-                <td>Reallocate</td>
                 <td><form action='update/department_updateform.php' method='post'><input type='hidden' name='id' value='$id'/> <input type='submit' name='submit' value='Update' /></form></td>
             </tr>
 

@@ -3,9 +3,10 @@
  * Created by PhpStorm.
  * User: Pauline
  * Date: 18/03/2019
- * Time: 14:25
+ * Purpose: Update form for password
  */
 
+//Initialise code to create a session and link to the database
 session_start();
 include("../config.php");
 
@@ -30,38 +31,44 @@ $username=$_SESSION["userID"];		//get user name into variable $username
     <link rel="stylesheet" href="../assets/css/form.css">
 
 </head>
+
 <body>
-<div class="container colour">
+
+  <div class="container colour">
+
     <header>
         <a href="../index.php"><h2 class="logo">FORECAST</h2></a>
     </header>
 
+    <!-- Start of main -->
     <main>
         <div class=" d-flex justify-content-center">
+        <br>
 
-<br>
+        <?php
+        $sql_query="SELECT * FROM user WHERE username='$username'";
 
-<?php
+        $result = $db->query($sql_query);
+        while($row = $result->fetch_array()) {
+            $pwd = "";
 
-$sql_query="SELECT * FROM user WHERE username='$username'";
-
-$result = $db->query($sql_query);
-while($row = $result->fetch_array()) {
-    $pwd = "";
-
-    echo "
-<form method='post' action='update_password.php'>
-   <h1 class='forecast'>Update password</h1>
-    <label>Password </label><br>
-    <input type='password' name='pwd' value='$pwd' minlength='8' autofocus required/><br><br>
-     
-    <input type='submit' name='submit' value='Submit' />
-</form>";
-}
-?>
+            echo "
+        <form method='post' action='update_password.php'>
+           <h1 class='forecast'>Update password</h1>
+            <label>Password </label><br>
+            <input type='password' name='pwd' value='$pwd' minlength='8' autofocus required/><br><br>
+             
+            <input type='submit' name='submit' value='Submit' />
+        </form>";
+        }
+        ?>
         </div>
     </main>
-</div>
+    <!-- End of main -->
+
+<!-- End of <div class="container colour">-->
+  </div>
+
 </body>
 </html>
 

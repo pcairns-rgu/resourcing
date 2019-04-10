@@ -3,8 +3,10 @@
  * Created by PhpStorm.
  * User: Pauline
  * Date: 18/03/2019
- * Time: 14:25
+ * Purpose: Update form for department related tasks
  */
+
+//Initialise code to create a session and link to the database
 session_start();
 include("../config.php");
 if (!IsSet($_SESSION["userID"]))		//user variable must exist in session to stay here
@@ -12,6 +14,7 @@ if (!IsSet($_SESSION["userID"]))		//user variable must exist in session to stay 
 $username=$_SESSION["userID"];		//get user name into variable $username
 
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -30,53 +33,54 @@ $username=$_SESSION["userID"];		//get user name into variable $username
 
 </head>
 <body>
-<div class="container colour">
+
+  <div class="container colour">
+
     <header>
         <a href="../index.php"><h2 class="logo">FORECAST</h2></a>
     </header>
 
+<!-- Start of main -->
     <main>
         <div class=" d-flex justify-content-center">
+        <br>
 
-
-
-
-<br>
-
-<?php
-
-$id=$_POST['id'];
-$sql_query="SELECT * FROM department WHERE id='$id'";
-
-$result = $db->query($sql_query);
-while($row = $result->fetch_array()) {
-    $today = $row['today'];
-    $task = $row['task'];
-    $comments = $row['comments'];
-    $deadline = $row['deadline'];
-    $completed=$row['completed'];
-    $id=$row['id'];
-    echo "
-<form method='post' action='update_department_task.php'>
-    <h1 class='forecast'>Update task</h1>
-    <label>Task </label><br>
-    <input type='text' name='task' value='$task' autofocus required/><br><br>
-    <label>Notes/Status </label><br>
-    <textarea name='comments'>$comments</textarea><br><br>
-    <label>Deadline </label><br>
-    <input type='date' name='deadline' value='$deadline' /><br><br>
-    <label>Completed:      </label>
-    <input type='radio' name='completed' value='Yes' />Yes
-    <input type='radio' name='completed' value='No' />No
-    <input type='hidden' name='id' value='$id'/>
-    <br><br>
-    <input type='submit' name='submit' value='Submit' />
-</form>";
-}
-?>
+        <!-- Retrieve entry from database and allow amendments -->
+        <?php
+        $id=$_POST['id'];
+        $sql_query="SELECT * FROM department WHERE id='$id'";
+        $result = $db->query($sql_query);
+        while($row = $result->fetch_array()) {
+            $today = $row['today'];
+            $task = $row['task'];
+            $comments = $row['comments'];
+            $deadline = $row['deadline'];
+            $completed=$row['completed'];
+            $id=$row['id'];
+            echo "
+        <form method='post' action='update_department_task.php'>
+            <h1 class='forecast'>Update task</h1>
+            <label>Task </label><br>
+            <input type='text' name='task' value='$task' autofocus required/><br><br>
+            <label>Notes/Status </label><br>
+            <textarea name='comments'>$comments</textarea><br><br>
+            <label>Deadline     *Required</label><br>
+            <input type='date' name='deadline' value='$deadline' /><br><br>
+            <label>Completed:      </label>
+            <input type='radio' name='completed' value='Yes' />Yes
+            <input type='radio' name='completed' value='No' />No
+            <input type='hidden' name='id' value='$id'/>
+            <br><br>
+            <input type='submit' name='submit' value='Submit' />
+        </form>";
+        }
+        ?>
         </div>
-        </main>
-</div>
+    </main>
+<!-- End of main -->
+
+<!-- End of <div class="container colour">-->
+  </div>
 </body>
 </html>
 

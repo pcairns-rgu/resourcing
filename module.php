@@ -81,7 +81,7 @@ $username=$_SESSION["userID"];		//get user name into variable $username
                             <th>Deadline</th>
                             <th>Completed</th>
                             <th>Delete</th>
-                            <th>Reallocate</th>
+
                         </tr>
                         <?php
                         $sql_query="SELECT * FROM module_task,user WHERE module_task.username= user.username";
@@ -123,7 +123,7 @@ $username=$_SESSION["userID"];		//get user name into variable $username
                             <th>Deadline</th>
                             <th>Completed</th>
                             <th>Delete</th>
-                            <th>Reallocate</th>
+
                         </tr>
                         <?php
                         $sql_query="SELECT * FROM module_task,user WHERE module_task.username= user.username AND user.username='$username'";
@@ -165,7 +165,7 @@ $username=$_SESSION["userID"];		//get user name into variable $username
                             <th>Deadline</th>
                             <th>Completed</th>
                             <th>Delete</th>
-                            <th>Reallocate</th>
+
                         </tr>
                         <tr>
                             <?php
