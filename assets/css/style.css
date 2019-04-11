@@ -96,3 +96,11 @@ footer{
 .navbar-text2{
     padding-right: 150px;
 }
+
+.denied{
+    justify-content: center;
+}
+
+.small{
+    font-size: 9px;
+}

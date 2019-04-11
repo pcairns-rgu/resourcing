@@ -113,7 +113,8 @@ include("config.php");
           exit();
       }
 
-    }
+    };
+  $db->close();
   ?>
     </main>
 </div>

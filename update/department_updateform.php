@@ -74,6 +74,7 @@ $username=$_SESSION["userID"];		//get user name into variable $username
             <input type='submit' name='submit' value='Submit' />
         </form>";
         }
+        $db->close();
         ?>
         </div>
     </main>

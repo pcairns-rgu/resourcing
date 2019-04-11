@@ -32,10 +32,10 @@ $username=$_SESSION["userID"];		//get user name into variable $username
     <header>
 
         <nav class="navbar navbar-expand-sm">
-            <div class="row">
-                <a href="index.php"><h2 class="col logo">FORECAST</h2></a>
-                <h2 class="col forecast center">Overview</h2>
-                <ul class="col nav nav-pills">
+
+                <a href="index.php"><h2 class="col-sm-4 logo navbar-text">FORECAST</h2></a>
+                <h2 class="col-sm-4 forecast center navbar-text2">Overview</h2>
+                <ul class="col-sm-4 nav nav-pills">
 
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">My Account</a>
@@ -48,26 +48,35 @@ $username=$_SESSION["userID"];		//get user name into variable $username
                     </li>
 
                 </ul>
-            </div>
+
         </nav>
 
 
     </header>
     <main>
-
+        <div class="denied">
         <?php
-        echo $username;
-        echo "<br>";
-        echo strcmp($username,"jf004");
+        if($username!='jr001')
+        { echo"<br>";
+          echo "Access denied";
+          echo"<br>";
+          echo"<br>";
+          echo"<a href='full_list.php'>Return to my action list</a>";
+          echo"<br>";
+          echo"<br>";
+          exit();
+        }
+        ?>
+        </div>
+<!-- Not used in final version as onward click functionality not implemented
 
-               ?>
         <div class="dropdown">
             <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
                Select staff member
             </button>
             <div class="dropdown-menu">
 
-                <?php
+                <?php /*
                 $sql_query="SELECT * FROM user";
                 $result = $db->query($sql_query);
                 while($row = $result->fetch_array()) {
@@ -77,10 +86,10 @@ $username=$_SESSION["userID"];		//get user name into variable $username
                     echo "<a class='dropdown-item' href='#'>{$firstname} {$lastname}</a>";
        };
                 echo "<a class='dropdown-item' href='#' >All</a>";
-              ?>
+              */?>
             </div>
         </div>
-
+-->
             <h3>Module</h3>
 
         <table class="module">
@@ -144,7 +153,6 @@ $username=$_SESSION["userID"];		//get user name into variable $username
                                     </tr>
     <?php
     $sql_query="SELECT * FROM department, user WHERE department.username= user.username";
-
     $result = $db->query($sql_query);
     while($row = $result->fetch_array()) {
     $today = $row['today'];

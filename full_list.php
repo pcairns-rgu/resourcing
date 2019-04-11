@@ -50,11 +50,11 @@ $firstname = $row['firstname'];}
 
 
          <a href="index.php"><h2 class="col-sm-4 logo navbar-text">FORECAST</h2></a>
-         <h2 class="col-sm-4 forecast navbar-text2"><?php echo $firstname .'\'s'?> Action List</h2>
+         <h2 class="col-sm-4 forecast center navbar-text2"><?php echo $firstname .'\'s'?> Action List</h2>
          <ul class="col-sm-4 nav nav-pills">
 
             <li class="nav-item dropdown">
-              <div class="nav-link dropdown-toggle" data-toggle="dropdown">My Account</div>
+              <a class="nav-link dropdown-toggle" data-toggle="dropdown">My Account</a>
                 <div class="dropdown-menu">
                   <a class="dropdown-item" href="overview_list.php">Overview</a>
                   <a class="dropdown-item" href="module.php">Module</a>
@@ -71,6 +71,7 @@ $firstname = $row['firstname'];}
 
 <!-- Start of main -->
   <main>
+
            <ul class="nav nav-pills">
 
             <li class="nav-item dropdown">
@@ -126,6 +127,7 @@ $firstname = $row['firstname'];}
 
        ";
         }
+
         ?>
         </table>
 <br><br>
@@ -167,6 +169,7 @@ while($row = $result->fetch_array()) {
 
        ";
     }
+
     ?>
         </table>
         <br><br>

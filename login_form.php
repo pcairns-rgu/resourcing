@@ -40,9 +40,11 @@
 
   <header>
     <a href="index.php"><h2 class="logo">FORECAST</h2></a>
-      <div id="dialog" title="First time user" class="connect">
-          <p>If you are signing into your account for the first time, you should change your password as soon as you have logged in</p>
+      <!-- couldn't get popup box to sit to the right hand side of screen plus it kept overlapping with the footer
+      <div id="dialog" title="First time user" class="connect"
+      <p>If you are signing into your account for the first time, you should change your password as soon as you have logged in</p>
       </div>
+      -->
   </header>
 
   <main>
@@ -50,23 +52,15 @@
 
       <form method="post" action="login.php">
           <h1 class="forecast drop">Log-in</h1>
-                   <label>Username: </label><br>
+          <p class="small">If you are signing into your account for the first time,</p>
+          <p class="small">you should change your password as soon as you have logged in</p>
+          <label>Username: </label><br>
           <input type="text" name="username" placeholder="username" required/><br><br>
           <label>Password: </label><br>
           <input type="password" name="pwd" placeholder="password" required/><br><br>
           <input type="submit" name="submit" value="Log-in" />
       </form>
-
-
     </div>
-
-
-      <br>
-      <br>
-      <br>
-      <br>
-
-
 
   </main>
 
