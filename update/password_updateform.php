@@ -65,6 +65,7 @@ $username=$_SESSION["userID"];		//get user name into variable $username
         $db->close();
         ?>
         </div>
+        <a href="../full_list.php"><p>Return to action list</p></a>
     </main>
     <!-- End of main -->
 

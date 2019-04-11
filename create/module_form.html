@@ -26,14 +26,15 @@ Purpose: Input form for module related tasks
 
     <header>
         <a href="../index.php"><h2 class="logo">FORECAST</h2></a>
+
     </header>
 
     <main>
       <div class=" d-flex justify-content-center">
-      <br>
+
         <form method="post" action="input_module_task.php">
             <h1 class="forecast">Module task</h1>
-            <br>
+
             <p>*Can only add tasks to modules you teach</p>
             <label>Module  </label><br>
             <input type="text" name="code" placeholder="module id" autofocus required/><br><br>
@@ -44,8 +45,10 @@ Purpose: Input form for module related tasks
             <label>Deadline         </label><br>
             <input type="date" name="deadline" placeholder="deadline" required/>* Required<br><br>
             <input type="submit" name="submit" value="Submit" />
+
         </form>
       </div>
+        <a href="../full_list.php"><p>Return to action list</p></a>
    </main>
 
   </div>
