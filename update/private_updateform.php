@@ -73,6 +73,7 @@ $username=$_SESSION["userID"];		//get user name into variable $username
             <input type='hidden' name='id' value='$id'/>
             <br><br>
             <input type='submit' name='submit' value='Submit' />
+             <input type='submit' name=' <a href=\"../full_list.php\"><h3 class=\"connect\">Back</h3></a>' value='Back' />
         </form>";
         }
         $db->close();

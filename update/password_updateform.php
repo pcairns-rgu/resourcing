@@ -59,6 +59,7 @@ $username=$_SESSION["userID"];		//get user name into variable $username
             <input type='password' name='pwd' value='$pwd' minlength='8' autofocus required/><br><br>
              
             <input type='submit' name='submit' value='Submit' />
+           
         </form>";
         }
         $db->close();

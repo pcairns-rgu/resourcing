@@ -39,6 +39,8 @@ $username=$_SESSION["userID"];		//get user name into variable $username
 
       <header>
         <a href="../index.php"><h2 class="logo">FORECAST</h2></a>
+
+
     </header>
 
     <!-- Start of main -->
@@ -75,6 +77,8 @@ $username=$_SESSION["userID"];		//get user name into variable $username
             <input type='hidden' name='id' value='$id'/>
             <br><br>
             <input type='submit' name='submit' value='Submit' />
+            <input type='submit' name=' <a href=\"../full_list.php\"><h3 class=\"connect\">Back</h3></a>' value='Back' />
+          
         </form>";
         }
         $db->close();
