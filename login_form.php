@@ -22,14 +22,27 @@
 
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/form.css">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="//resources/demos/style.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script>
+        $( function() {
+                $("#dialog").dialog();
+            }
+         );
+    </script>
 
 </head>
 
-<body>
+<body class="body">
   <div class="container colour">
 
   <header>
     <a href="index.php"><h2 class="logo">FORECAST</h2></a>
+      <div id="dialog" title="First time user" class="connect">
+          <p>If you are signing into your account for the first time, you should change your password as soon as you have logged in</p>
+      </div>
   </header>
 
   <main>
@@ -44,7 +57,17 @@
           <input type="submit" name="submit" value="Log-in" />
       </form>
 
+
     </div>
+
+
+      <br>
+      <br>
+      <br>
+      <br>
+
+
+
   </main>
 
 <!-- start of footer -->
@@ -63,3 +86,6 @@
 
 </body>
 </html>
+
+
+

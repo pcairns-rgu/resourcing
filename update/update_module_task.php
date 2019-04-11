@@ -16,7 +16,7 @@ if (!IsSet($_SESSION["userID"]))		//user variable must exist in session to stay 
 $username=$_SESSION["userID"];		//get user name into variable $username
 
 //Processing input from module update form
-$module = $_POST["module"];
+
 $task = $_POST["task"];
 $comments=$_POST["comments"];
 $deadline=$_POST["deadline"];
@@ -24,7 +24,7 @@ $completed=$_POST["completed"];
 $id=$_POST["id"];
 
 //Insert data to database
-$sql = "UPDATE module SET module_task='$module', task='$task', comments='$comments', deadline='$deadline', completed='$completed' WHERE id='$id'";
+$sql = "UPDATE module_task SET task='$task', comments='$comments', deadline='$deadline', completed='$completed' WHERE id='$id'";
 
 //check post to DB successful and redirect back to full_list page
 if(mysqli_query($db, $sql)){

@@ -34,15 +34,15 @@ Purpose: Input form for module related tasks
         <form method="post" action="input_module_task.php">
             <h1 class="forecast">Module task</h1>
             <br>
-
-            <label>Module</label><br>
+            <p>*Can only add tasks to modules you teach</p>
+            <label>Module  </label><br>
             <input type="text" name="code" placeholder="module id" autofocus required/><br><br>
             <label>Task </label><br>
             <input type="text" name="task" placeholder="action required" required/><br><br>
             <label>Notes/Status </label><br>
             <textarea name="comments" placeholder="comments"></textarea><br><br>
-            <label>Deadline </label><br>
-            <input type="date" name="deadline" placeholder="deadline" required/><br><br>
+            <label>Deadline         </label><br>
+            <input type="date" name="deadline" placeholder="deadline" required/>* Required<br><br>
             <input type="submit" name="submit" value="Submit" />
         </form>
       </div>

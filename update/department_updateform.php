@@ -64,8 +64,8 @@ $username=$_SESSION["userID"];		//get user name into variable $username
             <input type='text' name='task' value='$task' autofocus required/><br><br>
             <label>Notes/Status </label><br>
             <textarea name='comments'>$comments</textarea><br><br>
-            <label>Deadline     *Required</label><br>
-            <input type='date' name='deadline' value='$deadline' /><br><br>
+            <label>Deadline    </label><br>
+            <input type='date' name='deadline' value='$deadline' />* Required<br><br>
             <label>Completed:      </label>
             <input type='radio' name='completed' value='Yes' />Yes
             <input type='radio' name='completed' value='No' />No

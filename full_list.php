@@ -35,7 +35,6 @@ $firstname = $row['firstname'];}
     <title>Action List</title>
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/table.css">
-    <link rel="stylesheet" href="assets/css/colours.css">
 
 </head>
 
@@ -45,17 +44,17 @@ $firstname = $row['firstname'];}
   <div class="container colour">
 
 <!--Start of header -->
+
   <header>
-    <nav class="navbar navbar-expand-sm nav-fill w-100 ">
+    <nav class="navbar navbar-expand-sm ">
 
-       <div class="row">
 
-         <a href="index.php"><h2 class="col-sm-4 logo">FORECAST</h2></a>
-         <h2 class="col-sm-4 forecast"><?php echo $firstname .'\'s'?> Action List</h2>
+         <a href="index.php"><h2 class="col-sm-4 logo navbar-text">FORECAST</h2></a>
+         <h2 class="col-sm-4 forecast navbar-text2"><?php echo $firstname .'\'s'?> Action List</h2>
          <ul class="col-sm-4 nav nav-pills">
 
             <li class="nav-item dropdown">
-              <div class="nav-link dropdown-toggle connect" data-toggle="dropdown">My Account</div>
+              <div class="nav-link dropdown-toggle" data-toggle="dropdown">My Account</div>
                 <div class="dropdown-menu">
                   <a class="dropdown-item" href="overview_list.php">Overview</a>
                   <a class="dropdown-item" href="module.php">Module</a>
@@ -66,7 +65,6 @@ $firstname = $row['firstname'];}
 
          </ul>
 
-       </div>
     </nav>
   </header>
 <!-- End of header -->

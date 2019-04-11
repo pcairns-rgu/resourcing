@@ -88,3 +88,11 @@ body{
 footer{
     margin-top:auto;
 }
+
+.body {
+    min-height: 100%;
+}
+
+.navbar-text2{
+    padding-right: 150px;
+}
