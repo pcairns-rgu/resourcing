@@ -23,7 +23,7 @@ if(isset($_POST["submit"]) && !empty($_FILES["file"]["name"])){
 
         if(move_uploaded_file($_FILES["file"]["tmp_name"], $targetFilePath)){
             // Insert image file name into database
-            $insert = $db->query("INSERT INTO images (`filename`, `mod_code`) VALUES ('".$fileName."', 'SCDM001')");
+            $insert = $db->query("INSERT INTO documents (`filename`, `mod_code`) VALUES ('".$fileName."', 'SCDM001')");
             if($insert){
                 $statusMsg = "The file ".$fileName. " has been uploaded successfully.";
             }else{

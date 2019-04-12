@@ -69,7 +69,7 @@ CREATE TABLE private
 ;
 
 
-CREATE TABLE images(
+CREATE TABLE documents(
                      id int NOT NULL AUTO_INCREMENT,
                      filename varchar(255) NOT NULL,
                      mod_code char(7),
@@ -86,6 +86,25 @@ CREATE TABLE teaches_module(
 
 
 
+);
+
+
+CREATE TABLE articles(
+          id          int          NOT NULL AUTO_INCREMENT,
+          title       varchar(255) NOT NULL,
+          webref      varchar(255) NOT NULL,
+          description varchar(255) NOT NULL,
+          mod_code    char(7),
+          PRIMARY KEY (id),
+          CONSTRAINT FK_images FOREIGN KEY (mod_code) REFERENCES module (code) ON UPDATE CASCADE
+);
+
+CREATE TABLE notes(
+                       id  int  NOT NULL AUTO_INCREMENT,
+                       notes       varchar(255) NOT NULL,
+                       mod_code    char(7),
+                       PRIMARY KEY (id),
+                       CONSTRAINT FK_images FOREIGN KEY (mod_code) REFERENCES module (code) ON UPDATE CASCADE
 );
 
 
@@ -117,3 +136,5 @@ INSERT INTO teaches_module VALUES('SCDM002', 'kg005');
 INSERT INTO teaches_module VALUES('SCDM003', 'km006');
 INSERT INTO teaches_module VALUES('SCDM004', 'sd008');
 INSERT INTO teaches_module VALUES('SCDM005','jf004');
+
+

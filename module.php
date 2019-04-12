@@ -10,6 +10,7 @@ include('config.php');
 if (!IsSet($_SESSION["userID"]))		//user variable must exist in session to stay here
     header("Location: login.php");	//if not, go back to login page
 $username=$_SESSION["userID"];		//get user name into variable $username
+$mod_code="SCDM001";
 ?>
 
 <!DOCTYPE html>
@@ -245,13 +246,39 @@ $username=$_SESSION["userID"];		//get user name into variable $username
         </table>
 
         <br><br>
+        <h3>Articles/documents</h3>
+        <p><a href="create/articles_form.php">Add task</a></p>
+        <table class='article'>
 
-
-        <table class='cabinet'>
 
             <tr>
-                <th>Articles/documents</th>
+                <th>Website</th>
+                <th>Notes(status)</th>
+                <th>Delete</th>
+
             </tr>
+
+            <tr>
+                <?php
+                $sql_query="SELECT * FROM articles WHERE mod_code='$mod_code'";
+                $result = $db->query($sql_query);
+                while($row = $result->fetch_array()) {
+
+                    $title = $row['title'];
+                    $webref = $row['webref'];
+                    $description = $row['description'];
+                    $id=$row['id'];
+                    echo "
+                        <tr>                    
+                            <td><a href='{$webref}' target='_blank'>{$title}</a></td>
+                            <td>{$description}</td>         
+                            <td><form action='delete/delete_article.php' method='post'>
+                            <input type='hidden' name='id' value='$id'/> 
+                            <input type='submit' name='submit' value='Delete' /></form></td>             
+                        </tr>
+                        ";
+                }
+                ?>
         </table>
         <br><br>
 

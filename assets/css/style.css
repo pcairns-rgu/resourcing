@@ -94,6 +94,7 @@ footer{
 }
 
 .navbar-text2{
+    width: 500px;
     padding-right: 150px;
 }
 
@@ -102,5 +103,5 @@ footer{
 }
 
 .small{
-    font-size: 9px;
+    font-size: 10px;
 }
