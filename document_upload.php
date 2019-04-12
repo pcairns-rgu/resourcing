@@ -5,7 +5,12 @@
  * Date: 18/03/2019
  * Time: 14:56
  */
+//Initialise code to create a session and link to the database
+session_start();
 
+if (!IsSet($_SESSION["userID"]))		//user variable must exist in session to stay here
+    header("Location: login.php");	//if not, go back to login page
+$username=$_SESSION["userID"];		//get user name into variable $username
 include("config.php");
 
 $statusMsg='';
@@ -13,17 +18,17 @@ $targetDir = "uploads/";
 $fileName=basename($_FILES["file"]["name"]);
 $targetFilePath = $targetDir . $fileName;
 $fileType = strtolower(pathinfo($targetFilePath,PATHINFO_EXTENSION));
-
-
-
+$description = $_POST["description"];
+$mod_code=$_POST["mod_code"];
+$uploadOk=1;
 
 
 if(isset($_POST["submit"]) && !empty($_FILES["file"]["name"])){
-    // Allow certain file formats
 
         if(move_uploaded_file($_FILES["file"]["tmp_name"], $targetFilePath)){
             // Insert image file name into database
-            $insert = $db->query("INSERT INTO documents (`filename`, `mod_code`) VALUES ('".$fileName."', 'SCDM001')");
+            $insert = $db->query("INSERT INTO documents (filename, mod_code, description) VALUES ('".$fileName."', '$mod_code', '$description')");
+           // $data = $insert->fetch();
             if($insert){
                 $statusMsg = "The file ".$fileName. " has been uploaded successfully.";
             }else{
@@ -34,8 +39,29 @@ if(isset($_POST["submit"]) && !empty($_FILES["file"]["name"])){
         }
     }else{
     $statusMsg = 'Please select a file to upload.';
+    // Check if file already exists
+
+
 }
 
+if (file_exists($targetFilePath)) {
+    echo "Sorry, file already exists.";
+    $uploadOk = 0;
+}
+header("location: module.php");
+$db->close();
+/*
+if(file_exists($targetFilePath)){
+    header('Content-Description'.$data['description'] );
+    header('Content-Type: '.$data['type']);
+    header('Content-Disposition: '.$data['disposition'].'; filename="'.basename($file).'"');
+  header('Expires: '.data['cache']);
+header('Pragma:'.$data['pragma']);
+header('Content-Length:'.filesize($file));
+readfile($file);
+exit;
+
+}
 // Display status message
 
 echo $statusMsg;

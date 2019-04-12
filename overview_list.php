@@ -38,7 +38,7 @@ $username=$_SESSION["userID"];		//get user name into variable $username
                 <ul class="col-sm-4 nav nav-pills">
 
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">My Account</a>
+                        <a class="nav-link dropdown-toggle" data-toggle="dropdown">My Account</a>
                         <div class="dropdown-menu">
                             <a class="dropdown-item" href="full_list.php">My task list</a>
                             <a class="dropdown-item" href="module.php">Module</a>

@@ -35,10 +35,10 @@ $name= "Data Visualisation";
         <nav class="navbar navbar-expand-sm">
 
             <a href="index.php"><h2 class="col-sm-4 logo navbar-text">FORECAST</h2></a>
-            <h2 class="col-sm-4 forecast center"><?php echo $mod_code.' '.$name ?> </h2>
+            <h2 class="col-sm-4 forecast center navbar-text"><?php echo $mod_code.' '.$name ?> </h2>
             <ul class="col-sm-4 nav nav-pills">
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">My Account</a>
+                    <a class="nav-link dropdown-toggle" data-toggle="dropdown">My Account</a>
                     <div class="dropdown-menu">
                         <a class="dropdown-item" href="full_list.php">My task list</a>
                         <a class="dropdown-item" href="overview_list.php">Overview</a>
@@ -188,26 +188,40 @@ $name= "Data Visualisation";
         <br><br>
 
         <h3>Documents</h3>
+        <button type="button" data-toggle="collapse" data-target="#demo">Show all documents</button>
+        <br><br>
+        <div id="demo" class="collapse" >
+        <p><a href="create/documents_form.php">Add document</a></p>
         <table class='cabinet'>
 
             <tr>
                 <th>Filing cabinet</th>
             </tr>
+            <!-- move
             <tr>
                 <th>
-                    <form action="upload.php" method="post" enctype="multipart/form-data">
+                    <?php /* echo"
+                    <form action='document_upload.php' method='post' enctype='multipart/form-data'>
                         Select file to upload:
-                        <input type="file" name="file">
-                        <input type="submit" value="Upload" name="submit">
+                        <input type='file' name='file'>
+                        <label>Description</label>
+                        <textarea name='description' value='Description'></textarea>
+                        <input type='hidden' name='mod_code' value='$mod_code'/>
+                        <input type='submit' value='Upload' name='submit'>
                     </form>
-
+"; */ ?>
                 </th>
 
             </tr>
+-->
 
-       <tr>
-           <th>
+            <tr>
 
+                <th>Description</th>
+                <th>Filename</th>
+                <th>Delete</th>
+
+            </tr>
         <?php
 
 
@@ -216,18 +230,28 @@ $name= "Data Visualisation";
 
         if($query->num_rows > 0){
             while($row = $query->fetch_assoc()){
-                $imageURL = 'uploads/'.$row["filename"];
-                ?>
-                <img src="<?php echo $imageURL; ?>" alt="" />
-            <?php }
-        }else{ ?>
-            <p>No image(s) found...</p>
-        <?php } ?>
+                //$imageURL = 'uploads/'.$row["filename"];
+                                $id=$row['id'];
+                                $filename=$row['filename'];
+         echo "
+            <tr>
+            
+                <td>{$description}</td>
+                  <td>{$filename}</td>
+                <td><form action='delete_file.php' method='post'>
+                        <input type='hidden' name='id' value='$id'/>
 
-           </th>
-       </tr>
+                        <input type='submit' name='submit' value='Delete' /></form></td>
+            </tr>
+          ";
+        }}else{echo"
+            <p>No image(s) found...</p>";
+         }
+            ?>
+
+
         </table>
-
+        </div>
         <br><br>
         <h3>Articles</h3>
         <button type="button" data-toggle="collapse" data-target="#demo">Show all articles</button>
@@ -260,6 +284,7 @@ $name= "Data Visualisation";
                             <td>{$description}</td>         
                             <td><form action='delete/delete_article.php' method='post'>
                             <input type='hidden' name='id' value='$id'/> 
+                            
                             <input type='submit' name='submit' value='Delete' /></form></td>             
                         </tr>
                         ";
@@ -300,7 +325,7 @@ $name= "Data Visualisation";
         <br><br>
 
     </main>
-    <hr />
+
 
         <?php
         include('footer.html')
