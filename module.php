@@ -11,6 +11,7 @@ if (!IsSet($_SESSION["userID"]))		//user variable must exist in session to stay 
     header("Location: login.php");	//if not, go back to login page
 $username=$_SESSION["userID"];		//get user name into variable $username
 $mod_code="SCDM001";
+$name= "Data Visualisation";
 ?>
 
 <!DOCTYPE html>
@@ -32,10 +33,10 @@ $mod_code="SCDM001";
 <div class="container colour">
     <header>
         <nav class="navbar navbar-expand-sm">
-        <div class="row">
-            <a href="index.php"><h2 class="col logo">FORECAST</h2></a>
-            <h2 class="col forecast center">Module actions</h2>
-            <ul class="col nav nav-pills">
+
+            <a href="index.php"><h2 class="col-sm-4 logo navbar-text">FORECAST</h2></a>
+            <h2 class="col-sm-4 forecast center"><?php echo $mod_code.' '.$name ?> </h2>
+            <ul class="col-sm-4 nav nav-pills">
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">My Account</a>
                     <div class="dropdown-menu">
@@ -47,7 +48,7 @@ $mod_code="SCDM001";
                 </li>
 
             </ul>
-        </div>
+
         </nav>
           </header>
 
@@ -75,21 +76,17 @@ $mod_code="SCDM001";
                     <table class="module">
 
                         <tr>
-                            <th>Date</th>
-                            <th>Course</th>
+                            <th>Name</th>
                             <th>Action</th>
                             <th>Notes(status)</th>
                             <th>Deadline</th>
                             <th>Completed</th>
-                            <th>Delete</th>
 
                         </tr>
                         <?php
-                        $sql_query="SELECT * FROM module_task,user WHERE module_task.username= user.username";
+                        $sql_query="SELECT * FROM module_task,user WHERE module_task.username= user.username ORDER BY deadline ";
                         $result = $db->query($sql_query);
-                        while($row = $result->fetch_array()) {
-                        $today = $row['today'];
-                        $code = $row['code'];
+                        while($row = $result->fetch_array()){
                         $task = $row['task'];
                         $comments = $row['comments'];
                         $deadline = $row['deadline'];
@@ -100,8 +97,6 @@ $mod_code="SCDM001";
                         echo "
                         <tr>
                             <td>{$firstname} {$lastname}</td>
-                            <td>{$today}</td>
-                            <td>{$code}</td>
                             <td>{$task}</td>
                             <td>{$comments}</td>
                             <td>{$deadline}</td>
@@ -109,7 +104,7 @@ $mod_code="SCDM001";
                         </tr>
 
                         ";
-                        }
+                        };
 ?>
                     </table>
                 </div>
@@ -117,21 +112,16 @@ $mod_code="SCDM001";
                     <table class="module">
 
                         <tr>
-                            <th>Date</th>
-                            <th>Course</th>
+                            <th>Name</th>
                             <th>Action</th>
                             <th>Notes(status)</th>
                             <th>Deadline</th>
                             <th>Completed</th>
-                            <th>Delete</th>
-
                         </tr>
                         <?php
-                        $sql_query="SELECT * FROM module_task,user WHERE module_task.username= user.username AND user.username='$username'";
+                        $sql_query="SELECT * FROM module_task,user WHERE module_task.username= user.username AND user.username='$username'ORDER BY deadline";
                         $result = $db->query($sql_query);
                         while($row = $result->fetch_array()) {
-                            $today = $row['today'];
-                            $code = $row['code'];
                             $task = $row['task'];
                             $comments = $row['comments'];
                             $deadline = $row['deadline'];
@@ -141,9 +131,7 @@ $mod_code="SCDM001";
                             $lastname=$row['lastname'];
                             echo "
                         <tr>
-                          <td>{$lastname}</td>
-                            <td>{$today}</td>
-                            <td>{$code}</td>
+                          <td>{$firstname} {$lastname}</td>
                             <td>{$task}</td>
                             <td>{$comments}</td>
                             <td>{$deadline}</td>
@@ -159,22 +147,18 @@ $mod_code="SCDM001";
                     <table class="module">
 
                         <tr>
-                            <th>Date</th>
-                            <th>Course</th>
+                            <th>Name</th>
                             <th>Action</th>
                             <th>Notes(status)</th>
                             <th>Deadline</th>
                             <th>Completed</th>
-                            <th>Delete</th>
 
                         </tr>
                         <tr>
                             <?php
-                            $sql_query="SELECT * FROM module_task,user WHERE module_task.username= user.username AND user.username!='$username'";
+                            $sql_query="SELECT * FROM module_task,user WHERE module_task.username= user.username AND user.username!='$username'ORDER BY deadline";
                             $result = $db->query($sql_query);
                             while($row = $result->fetch_array()) {
-                                $today = $row['today'];
-                                $code = $row['code'];
                                 $task = $row['task'];
                                 $comments = $row['comments'];
                                 $deadline = $row['deadline'];
@@ -184,9 +168,7 @@ $mod_code="SCDM001";
                                 $lastname=$row['lastname'];
                                 echo "
                         <tr>
-                          <td>{$lastname}</td>
-                            <td>{$today}</td>
-                            <td>{$code}</td>
+                          <td>{$firstname} {$lastname}</td>
                             <td>{$task}</td>
                             <td>{$comments}</td>
                             <td>{$deadline}</td>
@@ -205,6 +187,7 @@ $mod_code="SCDM001";
 
         <br><br>
 
+        <h3>Documents</h3>
         <table class='cabinet'>
 
             <tr>
@@ -229,7 +212,7 @@ $mod_code="SCDM001";
 
 
         // Get images from the database
-        $query = $db->query("SELECT * FROM images");
+        $query = $db->query("SELECT * FROM documents");
 
         if($query->num_rows > 0){
             while($row = $query->fetch_assoc()){
@@ -246,8 +229,11 @@ $mod_code="SCDM001";
         </table>
 
         <br><br>
-        <h3>Articles/documents</h3>
-        <p><a href="create/articles_form.php">Add task</a></p>
+        <h3>Articles</h3>
+        <button type="button" data-toggle="collapse" data-target="#demo">Show all articles</button>
+        <br><br>
+        <div id="demo" class="collapse" >
+        <p><a href="create/articles_form.php">Add reference</a></p>
         <table class='article'>
 
 
@@ -281,29 +267,35 @@ $mod_code="SCDM001";
                 ?>
         </table>
         <br><br>
+        </div>
 
 
-        <table class='cabinet'>
-
-            <tr>
-                <th>Reminders</th>
-            </tr>
-        </table>
-        <br><br>
-
-        <table class='cabinet'>
+        <h3>Notes</h3>
+        <p><a href="create/notes_form.php">Add note</a></p>
+        <table class='notes'>
 
             <tr>
-                <th>Pending deadlines</th>
+                <th width="400">Add note</th>
+                <th>Delete</th>
             </tr>
-        </table>
-        <br><br>
 
-        <table class='cabinet'>
+            <?php
+            $sql_query="SELECT * FROM notes WHERE mod_code='$mod_code'";
+            $result = $db->query($sql_query);
+            while($row = $result->fetch_array()) {
 
-            <tr>
-                <th>Add note</th>
-            </tr>
+                $notes = $row['notes'];
+                $id=$row['id'];
+                echo "
+                        <tr>                    
+                            <td>{$notes}</td>         
+                            <td><form action='delete/delete_notes.php' method='post'>
+                            <input type='hidden' name='id' value='$id'/> 
+                            <input type='submit' name='submit' value='Delete' /></form></td>             
+                        </tr>
+                        ";
+            }
+            ?>
         </table>
         <br><br>
 

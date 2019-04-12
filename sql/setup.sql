@@ -1,4 +1,4 @@
-DROP TABLE images;
+DROP TABLE documents;
 
 DROP TABLE teaches_module;
 
@@ -74,7 +74,7 @@ CREATE TABLE documents(
                      filename varchar(255) NOT NULL,
                      mod_code char(7),
                      PRIMARY KEY(id),
-                     CONSTRAINT FK_images FOREIGN KEY(mod_code) REFERENCES module(code) ON UPDATE CASCADE
+                     CONSTRAINT FK_documents FOREIGN KEY(mod_code) REFERENCES module(code) ON UPDATE CASCADE
 );
 
 CREATE TABLE teaches_module(
@@ -96,7 +96,7 @@ CREATE TABLE articles(
           description varchar(255) NOT NULL,
           mod_code    char(7),
           PRIMARY KEY (id),
-          CONSTRAINT FK_images FOREIGN KEY (mod_code) REFERENCES module (code) ON UPDATE CASCADE
+          CONSTRAINT FK_articles FOREIGN KEY (mod_code) REFERENCES module (code) ON UPDATE CASCADE
 );
 
 CREATE TABLE notes(
@@ -104,8 +104,9 @@ CREATE TABLE notes(
                        notes       varchar(255) NOT NULL,
                        mod_code    char(7),
                        PRIMARY KEY (id),
-                       CONSTRAINT FK_images FOREIGN KEY (mod_code) REFERENCES module (code) ON UPDATE CASCADE
+                       CONSTRAINT FK_notes FOREIGN KEY (mod_code) REFERENCES module (code) ON UPDATE CASCADE
 );
+
 
 
 INSERT INTO module VALUES ('SCDM001', 'Data Visualisation');
