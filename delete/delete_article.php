@@ -2,7 +2,7 @@
 /**
  * Created by PhpStorm.
  * User: Pauline
- * Date: 17/03/2019
+ * Date: 11/04/2019
  * Purpose: takes input from article in module.php and posts it to the database
  */
 session_start();
@@ -17,7 +17,7 @@ $id=$_POST['id'];
 //Insert data to database
 $sql = "DELETE FROM articles WHERE id='$id'";
 
-//check post to DB successful and redirect back to full_list page
+//check post to DB successful and redirect back to module page
 if(mysqli_query($db, $sql)){
 
 }else {echo "Error: ". $sql . "<br". mysqli_error($db);

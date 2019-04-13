@@ -139,3 +139,34 @@ INSERT INTO teaches_module VALUES('SCDM004', 'sd008');
 INSERT INTO teaches_module VALUES('SCDM005','jf004');
 
 
+INSERT INTO `private` (`today`, `task`, `comments`, `deadline`, `completed`, `username`) VALUES
+(curdate(), 'Send out feedback request forms', '4 Done, 4 more to do', '2019-04-30', NULL, 'kg005'),
+(curdate(), 'Sign up for DataFest events', '', '2019-04-19', NULL, 'kg005'),
+(curdate(), 'Draft objectives for next semester', '', '2019-05-31', NULL, 'jf004'),
+(curdate(), 'Remember to bring in new jar of coffee', '', '2019-04-15', NULL, 'jf004');
+
+INSERT INTO `department` (`today`, `task`, `comments`, `deadline`, `completed`, `username`) VALUES
+(curdate(), 'Annual GDPR training to be done', '', '2019-04-30', NULL, 'kg005'),
+(curdate(), 'Arrange meeting with JB to discuss modules to teach next semester', 'Meeting invite sent', '2019-04-19', NULL, 'kg005'),
+(curdate(), 'Still have GDPR training to complete before the deadline', '', '2019-04-30', NULL, 'jf004'),
+(curdate(), 'Prep presentation on student results for 1st semester', 'Acquired info, still presentation to do', '2019-04-30', NULL, 'jf004');
+
+INSERT INTO `module_task` (`today`, `code`, `task`, `comments`, `deadline`, `completed`, `username`) VALUES
+(curdate(), 'SCDM005', 'check room  booked for May assessment', 'Emailed school office', '2019-04-20', '', 'kg005'),
+(curdate(), 'SCDM005', 'Update lecture 1 to reflect issues with Microsoft Azure', '', '2019-04-26', '', 'kg005'),
+(curdate(), 'SCDM005', 'Create additional lab on how to upload and download files using php', '', '2019-05-31', '', 'kg005'),
+(curdate(), 'SCDM005', 'Undertake second review of assessment paper\r\n', 'Discuss if questions on sql should be asked', '2019-04-19', '', 'jf004'),
+(curdate(), 'SCDM005', 'Look at whether students should continue to host on  csdmserver or if a better way of hosting', '', '2019-05-31', '', 'jf004');
+
+INSERT INTO `documents` (`filename`, `mod_code`, `description`) VALUES
+('Creating an HTML CV.pdf', 'SCDM005', 'Lab to create a CV'),
+('HTML Quiz System.pdf', 'SCDM005', 'Lab for quiz system');
+
+INSERT INTO `notes` (`notes`, `mod_code`) VALUES
+('Remember that IT need two signatures from tutors before adding new software to student computers', 'SCDM005'),
+('Attendance forms should be automated - student project?', 'SCDM005');
+
+INSERT INTO `articles` (`title`, `webref`, `description`, `mod_code`) VALUES
+('Adobe colour wheel', 'https://color.adobe.com/create/color-wheel', 'Helps explore colour combinations for web apps', 'SCDM005'),
+('Flex box tutorial', 'http://flexboxfroggy.com/', 'Interactive way of learning about flex box', 'SCDM005'),
+('Social media links ', 'https://www.addthis.com/', 'Can use to add social media links to app', 'SCDM005');

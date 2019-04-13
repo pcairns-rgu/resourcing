@@ -2,8 +2,8 @@
 /**
  * Created by PhpStorm.
  * User: Pauline
- * Date: 17/03/2019
- * Purpose: deletes item from database
+ * Date: 12/04/2019
+ * Purpose: deletes file on module page from database
  */
 session_start();
 include("config.php");
@@ -17,14 +17,12 @@ $id=$_POST['id'];
 $sql_query="SELECT filename FROM documents WHERE id='$id'";
 $result = $db->query($sql_query);
 while($row = $result->fetch_array()) {
-
     $filename = $row['filename'];
-
 
 //Delete data from database
     $sql = "DELETE FROM documents WHERE id='$id'";
 
-//check post to DB successful and redirect back to full_list page
+//check post to DB successful and redirect back to module page
     if (mysqli_query($db, $sql)) {
 
         unlink('uploads/'.$filename);

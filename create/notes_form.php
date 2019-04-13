@@ -9,7 +9,7 @@ include("../config.php");
 if (!IsSet($_SESSION["userID"]))		//user variable must exist in session to stay here
 header("Location: login.php");	//if not, go back to login page
 $username=$_SESSION["userID"];	//get user name into variable $username
-$mod_code="SCDM001";
+$mod_code="SCDM005";  //currently hardcoded in - in future could be changed to a value being passed in
 
 ?>
 <!DOCTYPE html>

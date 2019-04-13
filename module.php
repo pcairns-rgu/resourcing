@@ -10,8 +10,8 @@ include('config.php');
 if (!IsSet($_SESSION["userID"]))		//user variable must exist in session to stay here
     header("Location: login.php");	//if not, go back to login page
 $username=$_SESSION["userID"];		//get user name into variable $username
-$mod_code="SCDM001";  // currently hardcoded but additional code could be written to pass a value in
-$name= "Data Visualisation";  // currently hardcoded but additional code could be written to pass a value in
+$mod_code="SCDM005";  // currently hardcoded but additional code could be written to pass a value in
+$name= "Website development";  // currently hardcoded but additional code could be written to pass a value in
 ?>
 
 <!DOCTYPE html>
@@ -197,27 +197,6 @@ $name= "Data Visualisation";  // currently hardcoded but additional code could b
         <table class='cabinet'>
 
             <tr>
-                <th>Filing cabinet</th>
-            </tr>
-            <!-- move
-            <tr>
-                <th>
-                    <?php /* echo"
-                    <form action='document_upload.php' method='post' enctype='multipart/form-data'>
-                        Select file to upload:
-                        <input type='file' name='file'>
-                        <label>Description</label>
-                        <textarea name='description' value='Description'></textarea>
-                        <input type='hidden' name='mod_code' value='$mod_code'/>
-                        <input type='submit' value='Upload' name='submit'>
-                    </form>
-"; */ ?>
-                </th>
-
-            </tr>
--->
-
-            <tr>
 
                 <th>Description</th>
                 <th>Filename</th>
@@ -227,17 +206,16 @@ $name= "Data Visualisation";  // currently hardcoded but additional code could b
             </tr>
         <?php
 
-
         // Get images from the database
         $query = $db->query("SELECT * FROM documents");
 
         if($query->num_rows > 0){
             while($row = $query->fetch_assoc()){
-                //$imageURL = 'uploads/'.$row["filename"];
-                                $id=$row['id'];
-                                $filename=$row['filename'];
-         echo "
-            <tr>
+                 $id=$row['id'];
+                 $filename=$row['filename'];
+                 $description=$row['description'];
+            echo "
+              <tr>
             
                 <td>{$description}</td>
                   <td>{$filename}</td>
@@ -249,10 +227,10 @@ $name= "Data Visualisation";  // currently hardcoded but additional code could b
                         <input type='hidden' name='id' value='$id'/>
 
                         <input type='submit' name='submit' value='Download' /></form></td>        
-            </tr>
-          ";
+              </tr>
+            ";
         }}else{echo"
-            <p>No image(s) found...</p>";
+            <p>No document(s) found...</p>";
          }
             ?>
 

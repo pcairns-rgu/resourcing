@@ -95,7 +95,7 @@ $firstname = $row['firstname'];}
                 <th>Action</th>
                 <th>Notes(status)</th>
                 <th>Deadline</th>
-                <th>Completed</th>
+                <th>Completed (optional)</th>
                 <th>Delete</th>
                 <th>Update</th>
               </tr>
@@ -116,8 +116,8 @@ $firstname = $row['firstname'];}
                 <td>{$today}</td>
                 <td>{$code}</td>
                 <td>{$task}</td>
-                    <td>{$comments}</td>
-                    <td>{$deadline}</td>
+                <td>{$comments}</td>
+                <td>{$deadline}</td>
                 <td>{$completed}</td>
                 <td><form action='delete/delete_module_task.php' method='post'><input type='hidden' name='id' value='$id'/> <input type='submit' name='submit' value='Delete' /></form></td>
                 <td><form action='update/module_updateform.php' method='post'><input type='hidden' name='id' value='$id'/> <input type='submit' name='submit' value='Update' /></form></td>
@@ -140,7 +140,7 @@ $firstname = $row['firstname'];}
                 <th>Action</th>
                 <th>Notes(status)</th>
                 <th>Deadline</th>
-                <th>Completed</th>
+                <th>Completed (optional)</th>
                 <th>Delete</th>
                 <th>Update</th>
               </tr>
@@ -216,7 +216,7 @@ $firstname = $row['firstname'];}
               }
             ?>
           </table>
-         /section>
+         </section>
       <!-- end of private related tasks display section -->
       </article>
 

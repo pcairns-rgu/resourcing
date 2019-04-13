@@ -1,6 +1,6 @@
 <!--
 Creator: Pauline Cairns
-Date: 11/03/2019
+Date: 11/04/2019
 Purpose: Input form for articles on module page
 -->
 <?php
@@ -9,7 +9,7 @@ include("../config.php");
 if (!IsSet($_SESSION["userID"]))		//user variable must exist in session to stay here
 header("Location: login.php");	//if not, go back to login page
 $username=$_SESSION["userID"];	//get user name into variable $username
-$mod_code="SCDM001";
+$mod_code="SCDM005";
 
 ?>
 <!DOCTYPE html>
