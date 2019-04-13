@@ -67,6 +67,7 @@ $firstname = $row['firstname'];}
 
 <!-- Start of main -->
   <main>
+      <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
   <!-- pill to allow user to select at top of page to add a task to any table -->
       <ul class="nav nav-pills">
           <li class="nav-item dropdown">

@@ -190,6 +190,7 @@ $name= "Website development";  // currently hardcoded but additional code could 
         <section>
 
         <h3>Documents</h3>
+            <!-- insert collapse button -->
         <button type="button" data-toggle="collapse" data-target="#documents">Show all documents</button>
         <br><br>
         <div id="documents" class="collapse" >
@@ -288,6 +289,11 @@ $name= "Website development";  // currently hardcoded but additional code could 
       <!-- start of notes section -->
       <section>
         <h3>Notes</h3>
+          <!-- insert collapse button -->
+          <button type="button" data-toggle="collapse" data-target="#notes">Show all articles</button>
+          <br><br>
+
+          <div id="notes" class="collapse" >
         <p><a href="create/notes_form.php">Add note</a></p>
 
         <table class='notes'>

@@ -4,49 +4,13 @@ Date: 11/03/2019
 Purpose: Page provides css general styling across the app
 */
 
-
+/* no styling applied to nav items */
 nav>ul>li{
     list-style-type: none;
 }
 
-a.youtube {
-    background-image: url("/assets/images/youtube_social_squircle_red.png");
-    background-repeat: no-repeat;
-}
-
-.logo{
-    color: darkgoldenrod;
-    letter-spacing: 0.1em;
-    padding-top: 25px;
-    padding-bottom: 15px;
-}
-
 a:link{
     text-decoration: none;
-}
-
-
-.forecast{
-    color: darkgoldenrod;
-}
-
-body{
-    background-color: #E7F4FF;
-
-}
-
-
-.colour{
-    background-color: white;
-    border-left: 1px solid lightsteelblue;
-    border-right: 1px solid lightsteelblue;
-}
-
-
-.connect{
-    float: right;
-    padding-right: 40px;
-
 }
 
 .nav-item{
@@ -57,6 +21,37 @@ body{
     padding-right: 100px;
 }
 
+.navbar-text2{
+    width: 500px;
+    padding-right: 150px;
+}
+
+.connect{
+    float: right;
+    padding-right: 40px;
+
+}
+
+/* Forecast logo at top left of pages */
+.logo{
+    color: darkgoldenrod;
+    letter-spacing: 0.1em;
+    padding-top: 25px;
+    padding-bottom: 15px;
+}
+
+/* Forecast styling when used inline */
+.forecast{
+    color: darkgoldenrod;
+}
+
+/* styling of pages */
+body{
+    background-color: #E7F4FF;
+    min-height: 100%;
+}
+
+
 h4{
     color: lightslategray;
 }
@@ -65,6 +60,12 @@ h3{
     color: saddlebrown;
 }
 
+/* styling of boxes */
+.colour{
+    background-color: white;
+    border-left: 1px solid lightsteelblue;
+    border-right: 1px solid lightsteelblue;
+}
 .middle{
  justify-items: center;
 }
@@ -76,29 +77,37 @@ h3{
 
 .center{
     text-align: center;
-
-
 }
 
-body{
-    min-height: 100%;
-    display:flex;
-    flex-direction:column;
-}
-
-.body {
-    min-height: 100%;
-}
-
-.navbar-text2{
-    width: 500px;
-    padding-right: 150px;
-}
-
+/* message on overview page if not head of school */
 .denied{
     justify-content: center;
 }
 
+/*wording on login page re not signed in before */
 .small{
     font-size: 11px;
+}
+
+/* scroll to top buttom */
+#myBtn {
+    display: none; /* Hidden by default */
+    position: fixed; /* Fixed/sticky position */
+    bottom: 20px; /* Place the button at the bottom of the page */
+    right: 30px; /* Place the button 30px from the right */
+    z-index: 99; /* Make sure it does not overlap */
+    border: none; /* Remove borders */
+    outline: none; /* Remove outline */
+    background-color: red; /* Set a background color */
+    color: white; /* Text color */
+    cursor: pointer; /* Add a mouse pointer on hover */
+    padding: 15px; /* Some padding */
+    border-radius: 10px; /* Rounded corners */
+    font-size: 18px; /* Increase font size */
+}
+
+footer{
+   position: absolute;
+    bottom: 0;
+
 }
