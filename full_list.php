@@ -47,8 +47,6 @@ $firstname = $row['firstname'];}
 
   <header>
     <nav class="navbar navbar-expand-sm ">
-
-
          <a href="index.php"><h2 class="col-sm-4 logo navbar-text">FORECAST</h2></a>
          <h2 class="col-sm-4 forecast center navbar-text2"><?php echo $firstname .'\'s'?> Action List</h2>
          <ul class="col-sm-4 nav nav-pills">
@@ -61,9 +59,7 @@ $firstname = $row['firstname'];}
                   <a class="dropdown-item" href="./update/password_updateform.php">Update password</a>
                   <a class="dropdown-item" href="log_out.php">Sign out</a>
                 </div>
-            </li>
-
-         </ul>
+            </li></ul>
 
     </nav>
   </header>
@@ -71,27 +67,29 @@ $firstname = $row['firstname'];}
 
 <!-- Start of main -->
   <main>
-
-           <ul class="nav nav-pills">
-
-            <li class="nav-item dropdown">
-                <div class="nav-link dropdown-toggle" data-toggle="dropdown">Add task</div>
-                <div class="dropdown-menu">
-                    <a class="dropdown-item" href="create/module_form.html">Module</a>
-                    <a class="dropdown-item" href="create/department_form.html">Department</a>
-                    <a class="dropdown-item" href="create/private_form.html">Private</a>
-                </div>
+  <!-- pill to allow user to select at top of page to add a task to any table -->
+      <ul class="nav nav-pills">
+          <li class="nav-item dropdown">
+              <div class="nav-link dropdown-toggle" data-toggle="dropdown">Add task</div>
+              <div class="dropdown-menu">
+                 <a class="dropdown-item" href="create/module_form.html">Module</a>
+                 <a class="dropdown-item" href="create/department_form.html">Department</a>
+                 <a class="dropdown-item" href="create/private_form.html">Private</a>
+              </div>
             </li>
 
         </ul>
+  <!--  end of pill to allow user to select at top of page to add a task to any table -->
+     <br>
 
-        <br>
+      <article><!--to keep together the three table sections displayed on the page-->
+          <!-- start of module related tasks display section -->
+          <section>
+            <h3>Module</h3>
+            <p><a href="create/module_form.html">Add task</a></p>
+            <table class='module'>
 
-        <h3>Module</h3>
-        <p><a href="create/module_form.html">Add task</a></p>
-        <table class='module'>
-
-            <tr>
+              <tr>
                 <th>Date added</th>
                 <th>Course</th>
                 <th>Action</th>
@@ -100,42 +98,44 @@ $firstname = $row['firstname'];}
                 <th>Completed</th>
                 <th>Delete</th>
                 <th>Update</th>
-            </tr>
-        <?php
-        $sql_query="SELECT * FROM module_task WHERE username='$username'";
-        $result = $db->query($sql_query);
-        while($row = $result->fetch_array()) {
-            $today = $row['today'];
-            $code = $row['code'];
-            $task = $row['task'];
-            $comments = $row['comments'];
-            $deadline = $row['deadline'];
-            $completed = $row['completed'];
-            $id=$row['id'];
-            echo "
-            <tr>
-            <td>{$today}</td>
-            <td>{$code}</td>
-            <td>{$task}</td>
-                <td>{$comments}</td>
-                <td>{$deadline}</td>
-            <td>{$completed}</td>
-            <td><form action='delete/delete_module_task.php' method='post'><input type='hidden' name='id' value='$id'/> <input type='submit' name='submit' value='Delete' /></form></td>
-            <td><form action='update/module_updateform.php' method='post'><input type='hidden' name='id' value='$id'/> <input type='submit' name='submit' value='Update' /></form></td>
+              </tr>
 
-            </tr>
+            <?php
+            $sql_query="SELECT * FROM module_task WHERE username='$username'";
+            $result = $db->query($sql_query);
+            while($row = $result->fetch_array()) {
+                $today = $row['today'];
+                $code = $row['code'];
+                $task = $row['task'];
+                $comments = $row['comments'];
+                $deadline = $row['deadline'];
+                $completed = $row['completed'];
+                $id=$row['id'];
+                echo "
+                <tr>
+                <td>{$today}</td>
+                <td>{$code}</td>
+                <td>{$task}</td>
+                    <td>{$comments}</td>
+                    <td>{$deadline}</td>
+                <td>{$completed}</td>
+                <td><form action='delete/delete_module_task.php' method='post'><input type='hidden' name='id' value='$id'/> <input type='submit' name='submit' value='Delete' /></form></td>
+                <td><form action='update/module_updateform.php' method='post'><input type='hidden' name='id' value='$id'/> <input type='submit' name='submit' value='Update' /></form></td>
+                </tr>
+                ";
+            }
+            ?>
+            </table>
+          </section>
+          <!-- end of module related tasks display section -->
+        <br><br>
+          <!-- start of department related tasks display section -->
+          <section>
+            <h3>Department</h3>
+            <p><a href="create/department_form.html">Add task</a></p>
+            <table class='department'>
 
-       ";
-        }
-
-        ?>
-        </table>
-<br><br>
-        <h3>Department</h3>
-        <p><a href="create/department_form.html">Add task</a></p>
-        <table class='department'>
-
-            <tr>
+              <tr>
                 <th>Date added</th>
                 <th>Action</th>
                 <th>Notes(status)</th>
@@ -143,39 +143,42 @@ $firstname = $row['firstname'];}
                 <th>Completed</th>
                 <th>Delete</th>
                 <th>Update</th>
-            </tr>
-        <?php
-$sql_query="SELECT * FROM department  WHERE username='$username'";
+              </tr>
+            <?php
+              $sql_query="SELECT * FROM department  WHERE username='$username'";
+              $result = $db->query($sql_query);
+              while($row = $result->fetch_array()) {
+                  $today = $row['today'];
+                  $task = $row['task'];
+                  $comments = $row['comments'];
+                  $deadline = $row['deadline'];
+                  $completed = $row['completed'];
+                  $id=$row['id'];
+                  echo "
+                       
+                    <tr>
+                       <td>{$today}</td>
+                        <td>{$task}</td>
+                        <td>{$comments}</td>
+                        <td>{$deadline}</td>
+                        <td>{$completed}</td>
+                        <td><form action='delete/delete_department_task.php' method='post'><input type='hidden' name='id' value='$id'/> <input type='submit' name='submit' value='Delete' /></form></td>
+                        <td><form action='update/department_updateform.php' method='post'><input type='hidden' name='id' value='$id'/> <input type='submit' name='submit' value='Update' /></form></td>
+                    </tr>
 
-$result = $db->query($sql_query);
-while($row = $result->fetch_array()) {
-    $today = $row['today'];
-    $task = $row['task'];
-    $comments = $row['comments'];
-    $deadline = $row['deadline'];
-    $completed = $row['completed'];
-    $id=$row['id'];
-    echo "
-       
-            <tr>
-               <td>{$today}</td>
-                <td>{$task}</td>
-                <td>{$comments}</td>
-                <td>{$deadline}</td>
-                <td>{$completed}</td>
-                <td><form action='delete/delete_department_task.php' method='post'><input type='hidden' name='id' value='$id'/> <input type='submit' name='submit' value='Delete' /></form></td>
-                <td><form action='update/department_updateform.php' method='post'><input type='hidden' name='id' value='$id'/> <input type='submit' name='submit' value='Update' /></form></td>
-            </tr>
-
-       ";
-    }
-
-    ?>
-        </table>
+                   ";
+              }
+            ?>
+            </table>
+          </section>
+          <!-- end of department related tasks display section -->
         <br><br>
-        <h3>Private</h3>
-        <p><a href="create/private_form.html">Add task</a></p>
-        <table class='private'>
+
+          <!-- start of private related tasks display section -->
+         <section>
+           <h3>Private</h3>
+           <p><a href="create/private_form.html">Add task</a></p>
+           <table class='private'>
 
             <tr>
                 <th>Date added</th>
@@ -189,33 +192,33 @@ while($row = $result->fetch_array()) {
             </tr>
 
             <?php
+              $sql_query="SELECT * FROM private WHERE username='$username'";
+              $result = $db->query($sql_query);
+              while($row = $result->fetch_array()) {
+                 $today = $row['today'];
+                 $task = $row['task'];
+                 $comments = $row['comments'];
+                 $deadline = $row['deadline'];
+                 $completed = $row['completed'];
+                 $id=$row['id'];
+                 echo "
+                 <tr>
+                  <td>{$today}</td>
+                  <td>{$task}</td>
+                  <td>{$comments}</td>
+                  <td>{$deadline}</td>
+                  <td>{$completed}</td>
+                  <td><form action='delete/delete_private_task.php' method='post'><input type='hidden' name='id' value='$id'/> <input type='submit' name='submit' value='Delete' /></form></td>
+                  <td><form action='update/private_updateform.php' method='post'><input type='hidden' name='id' value='$id'/> <input type='submit' name='submit' value='Update' /></form></td>       
+                 </tr>
 
-      $sql_query="SELECT * FROM private WHERE username='$username'";
-        $result = $db->query($sql_query);
-        while($row = $result->fetch_array()) {
-            $today = $row['today'];
-            $task = $row['task'];
-            $comments = $row['comments'];
-            $deadline = $row['deadline'];
-            $completed = $row['completed'];
-            $id=$row['id'];
-            echo "
-            <tr>
-                <td>{$today}</td>
-                <td>{$task}</td>
-                <td>{$comments}</td>
-                <td>{$deadline}</td>
-                <td>{$completed}</td>
-                <td><form action='delete/delete_private_task.php' method='post'><input type='hidden' name='id' value='$id'/> <input type='submit' name='submit' value='Delete' /></form></td>
-                <td><form action='update/private_updateform.php' method='post'><input type='hidden' name='id' value='$id'/> <input type='submit' name='submit' value='Update' /></form></td>
-                
-            </tr>
-
-    ";
-        }
-?>
-        </table>
-
+                 ";
+              }
+            ?>
+          </table>
+         /section>
+      <!-- end of private related tasks display section -->
+      </article>
 
     </main>
 <!-- End of main -->
