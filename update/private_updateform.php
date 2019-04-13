@@ -62,7 +62,7 @@ $username=$_SESSION["userID"];		//get user name into variable $username
         <form method='post' action='update_private_task.php'>
             <h1 class='forecast'>Update task </h1>
             <label>Task </label><br>
-            <input type='text' name='task' value='$task' autofocus required/><br><br>
+            <textarea name='task' autofocus required>$task<br><br>
             <label>Notes/Status </label><br>
             <textarea name='comments'>$comments</textarea><br><br>
             <label>Deadline  </label><br>

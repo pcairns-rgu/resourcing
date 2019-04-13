@@ -89,7 +89,7 @@ h3{
     font-size: 11px;
 }
 
-/* scroll to top buttom */
+/* scroll to top button */
 #myBtn {
     display: none; /* Hidden by default */
     position: fixed; /* Fixed/sticky position */
@@ -106,8 +106,9 @@ h3{
     font-size: 18px; /* Increase font size */
 }
 
+/* footer not staying at bottom of page
 footer{
    position: absolute;
     bottom: 0;
 
-}
+}*/

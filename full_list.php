@@ -186,7 +186,7 @@ $firstname = $row['firstname'];}
                 <th>Action</th>
                 <th>Notes(status)</th>
                 <th>Deadline</th>
-                <th>Completed</th>
+                <th>Completed (optional)</th>
                 <th>Delete</th>
                 <th>Update</th>
 

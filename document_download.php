@@ -46,7 +46,6 @@ if(file_exists($targetFilePath) && is_readable($targetFilePath)) {
 
     $file = @fopen($targetFilePath, 'r') or die("Unable to open file!");
     if ($file) {
-        ob_clean();
         fpassthru($file);
         exit;
     } else {

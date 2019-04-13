@@ -290,7 +290,7 @@ $name= "Website development";  // currently hardcoded but additional code could 
       <section>
         <h3>Notes</h3>
           <!-- insert collapse button -->
-          <button type="button" data-toggle="collapse" data-target="#notes">Show all articles</button>
+          <button type="button" data-toggle="collapse" data-target="#notes">Show all notes</button>
           <br><br>
 
           <div id="notes" class="collapse" >
