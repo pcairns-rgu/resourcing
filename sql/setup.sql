@@ -158,10 +158,6 @@ INSERT INTO `module_task` (`today`, `code`, `task`, `comments`, `deadline`, `com
 (curdate(), 'SCDM005', 'Undertake second review of assessment paper\r\n', 'Discuss if questions on sql should be asked', '2019-04-19', '', 'jf004'),
 (curdate(), 'SCDM005', 'Look at whether students should continue to host on  csdmserver or if a better way of hosting', '', '2019-05-31', '', 'jf004');
 
-INSERT INTO `documents` (`filename`, `mod_code`, `description`) VALUES
-('Creating an HTML CV.pdf', 'SCDM005', 'Lab to create a CV'),
-('HTML Quiz System.pdf', 'SCDM005', 'Lab for quiz system');
-
 INSERT INTO `notes` (`notes`, `mod_code`) VALUES
 ('Remember that IT need two signatures from tutors before adding new software to student computers', 'SCDM005'),
 ('Attendance forms should be automated - student project?', 'SCDM005');
