@@ -1,3 +1,7 @@
+DROP TABLE articles;
+
+DROP TABLE notes;
+
 DROP TABLE documents;
 
 DROP TABLE teaches_module;

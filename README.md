@@ -9,3 +9,5 @@ To recreate this project, please:
    then in browser run /resourcing/sql/user_password.php 
    (eg copy and paste http://localhost:81/resourcing/sql/user_password.php into browser updating the path as required)
 
+If having difficulties with the <script> elements, may have to do 
+alt + enter to download the libraries
