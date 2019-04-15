@@ -76,6 +76,7 @@ CREATE TABLE private
 CREATE TABLE documents(
                      id int NOT NULL AUTO_INCREMENT,
                      filename varchar(255) NOT NULL,
+                     description varchar(255) NOT NULL,
                      mod_code char(7),
                      PRIMARY KEY(id),
                      CONSTRAINT FK_documents FOREIGN KEY(mod_code) REFERENCES module(code) ON UPDATE CASCADE
