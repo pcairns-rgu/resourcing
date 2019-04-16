@@ -11,3 +11,5 @@ To recreate this project, please:
 
 If having difficulties with the <script> elements, may have to do 
 alt + enter to download the libraries
+   
+As the 'uploads' directory was empty when the last push was done to github, it is not appearing in the repository.  If doing a pull, will also need to set up an 'uploads' directory.
